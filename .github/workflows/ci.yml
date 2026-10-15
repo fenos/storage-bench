@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  bench:
+    name: Benchmark code and generated results
+    runs-on: tenki-standard-medium-4c-8g
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run typecheck
+      # The committed cost tables and site data must match what the code generates from the committed results.
+      - run: npm run costs > /dev/null
+      - run: npm run site:data
+      - run: git diff --exit-code -- results/COSTS.md results/costs.json site/src/data/results.json
+
+  site:
+    name: Results site
+    runs-on: tenki-standard-medium-4c-8g
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.2
+      - run: bun install --frozen-lockfile
+      - run: bun run build

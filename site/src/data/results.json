@@ -1,0 +1,2123 @@
+{
+  "metrics": [
+    {
+      "id": "up-1mb",
+      "title": "Upload a 1 MB file",
+      "note": "Median time for put(), like a photo upload.",
+      "value": "p50",
+      "better": "lower",
+      "batch": false
+    },
+    {
+      "id": "ttfb-1kb",
+      "title": "Read a small file: time to first byte",
+      "note": "Median TTFB of a 1 KB GET on a presigned URL.",
+      "value": "ttfb",
+      "better": "lower",
+      "batch": false
+    },
+    {
+      "id": "get-1mb",
+      "title": "Download a 1 MB file",
+      "note": "Median full GET on a presigned URL.",
+      "value": "p50",
+      "better": "lower",
+      "batch": false
+    },
+    {
+      "id": "up-100mb",
+      "title": "Upload a 100 MB file",
+      "note": "Median throughput of put() with a 100 MB body.",
+      "value": "mbps",
+      "better": "higher",
+      "batch": false
+    },
+    {
+      "id": "get-100mb",
+      "title": "Download a 100 MB file",
+      "note": "Median throughput of a GET on a presigned URL.",
+      "value": "mbps",
+      "better": "higher",
+      "batch": false
+    },
+    {
+      "id": "first",
+      "title": "First request from a fresh client",
+      "note": "New SDK client, new TCP and TLS connection, one head(). Like the first request after a deploy.",
+      "value": "p50",
+      "better": "lower",
+      "batch": false
+    },
+    {
+      "id": "par-up",
+      "title": "16 uploads in parallel",
+      "note": "Sixteen 100 KB put() calls at once, like a gallery upload. Time until all finish.",
+      "value": "p50",
+      "better": "lower",
+      "batch": true
+    },
+    {
+      "id": "list",
+      "title": "List 1,000 objects",
+      "note": "Walk every page of a 1,000-object prefix.",
+      "value": "p50",
+      "better": "lower",
+      "batch": false
+    }
+  ],
+  "providers": [
+    {
+      "id": "aws-s3",
+      "label": "Amazon S3",
+      "place": "Ohio",
+      "region": "us-east-2",
+      "at": [
+        40,
+        -83
+      ]
+    },
+    {
+      "id": "r2",
+      "label": "Cloudflare R2",
+      "place": "Eastern US",
+      "region": "ENAM hint",
+      "at": null
+    },
+    {
+      "id": "railway",
+      "label": "Railway Buckets",
+      "place": "Virginia",
+      "region": "iad",
+      "at": [
+        38.95,
+        -77.45
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Backblaze B2",
+      "place": "Eastern US",
+      "region": "us-east-005",
+      "at": [
+        38.96,
+        -77.36
+      ]
+    },
+    {
+      "id": "neon",
+      "label": "Neon",
+      "place": "Virginia",
+      "region": "aws us-east-1",
+      "at": [
+        39.04,
+        -77.49
+      ]
+    }
+  ],
+  "clients": [
+    {
+      "id": "railway-ashburn",
+      "label": "Ashburn, Virginia",
+      "host": "Railway",
+      "at": [
+        39.04,
+        -77.49
+      ],
+      "note": "A Railway server in Ashburn, Virginia: the same metro as most of the buckets, like an app on AWS us-east-1. Railway Buckets is on the same network here, which helps it. S3 is in Ohio, about 10 ms farther away.",
+      "runs": 3
+    },
+    {
+      "id": "ms-a2",
+      "label": "Florida home line",
+      "host": "Home server",
+      "at": [
+        27.8,
+        -81.7
+      ],
+      "note": "A home server in Florida on an AT&T line. This is the closest thing to a user's machine. The line's upload speed limits the 100 MB uploads, so those numbers say more about the line than the providers.",
+      "runs": 2
+    },
+    {
+      "id": "freestyle-sf",
+      "label": "San Francisco",
+      "host": "Freestyle",
+      "at": [
+        37.77,
+        -122.42
+      ],
+      "note": "A Freestyle VM in San Francisco. Every bucket is across the country.",
+      "runs": 2
+    },
+    {
+      "id": "tenki-seattle",
+      "label": "Seattle",
+      "host": "Tenki",
+      "at": [
+        47.47,
+        -122.26
+      ],
+      "note": "A Tenki VM in Seattle. Every bucket is across the country.",
+      "runs": 3
+    },
+    {
+      "id": "railway-amsterdam",
+      "label": "Amsterdam",
+      "host": "Railway",
+      "at": [
+        52.37,
+        4.9
+      ],
+      "note": "A Railway server in Amsterdam. Every bucket is across the Atlantic. Railway Buckets is on the same network here.",
+      "runs": 3
+    },
+    {
+      "id": "boat-lille",
+      "label": "Lille, France",
+      "host": "boat",
+      "at": [
+        50.63,
+        3.06
+      ],
+      "note": "A boat sandbox on OVH in Lille, France. Every bucket is across the Atlantic.",
+      "runs": 1
+    }
+  ],
+  "data": {
+    "up-1mb": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 170.15019899996696,
+          "p95": 230.06752300000224,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 322.6244149999984,
+          "p95": 359.4280332499824,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 555.9912684999872,
+          "p95": 1033.9755196000042,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 508.54850949998945,
+          "p95": 838.8221722999818,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 719.1304110000492,
+          "p95": 738.4869731999759,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 961.5927159999846,
+          "p95": 1705.8214904500287,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 256.5126545000239,
+          "p95": 1721.6042177999957,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 387.7864660000196,
+          "p95": 681.0814479999739,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 467.46392000000924,
+          "p95": 794.4596218999998,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 406.00565100001404,
+          "p95": 620.8458113999861,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 460.9162624999881,
+          "p95": 804.2796104999957,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 615.3936015000218,
+          "p95": 1500.6285013000247,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 112.58246500001405,
+          "p95": 200.01280770001756,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 284.6088654999912,
+          "p95": 319.3624235499708,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 479.2871035000426,
+          "p95": 732.7993816999483,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 473.5165970000671,
+          "p95": 822.3635044498602,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 500.25990599993384,
+          "p95": 555.9413974999392,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 521.2921770000248,
+          "p95": 1311.3145882500266,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 52.244182499998715,
+          "p95": 132.36653410000284,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 318.309207000013,
+          "p95": 622.0376879499904,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 617.2461064999807,
+          "p95": 951.5451197500045,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 617.3587435000227,
+          "p95": 1050.9104815499857,
+          "n": 60,
+          "failRate": 0.03333333333333333
+        },
+        "railway-amsterdam": {
+          "value": 844.3061680000974,
+          "p95": 961.4498592001037,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 875.5678654999938,
+          "p95": 1835.7341742499964,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 115.28234649999649,
+          "p95": 159.52772750000875,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 324.0105779999285,
+          "p95": 379.94886929999916,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 705.9889590000967,
+          "p95": 2336.5640937499816,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 561.7440815000446,
+          "p95": 677.5778209000534,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 678.1290710000321,
+          "p95": 736.1053468999918,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 908.6344800000661,
+          "p95": 1600.3507145999638,
+          "n": 30,
+          "failRate": 0
+        }
+      }
+    },
+    "ttfb-1kb": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 42.31743049999932,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 63.01111800000217,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 224.25781850000203,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 210.02861699997447,
+          "p95": null,
+          "n": 161,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 310.4057379999995,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 302.9077690000122,
+          "p95": null,
+          "n": 37,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 76.2335260000018,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 131.61080200000288,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 196.53242850000424,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 194.2396140000019,
+          "p95": null,
+          "n": 160,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 199.8158159999948,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 190.91069549998792,
+          "p95": null,
+          "n": 36,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 7.988283499995305,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 39.55356949999987,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 120.39809099999547,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 164.622360999987,
+          "p95": null,
+          "n": 161,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 213.2451410000067,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 228.45704100001603,
+          "p95": null,
+          "n": 37,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 10.798698999999033,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 46.862011499999426,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 221.59332699999504,
+          "p95": null,
+          "n": 117,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 208.33013199999914,
+          "p95": null,
+          "n": 160,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 289.38058550001006,
+          "p95": null,
+          "n": 178,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 277.74745399999665,
+          "p95": null,
+          "n": 37,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 40.50981449999745,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 66.90624849999949,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 273.37033900000097,
+          "p95": null,
+          "n": 120,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 247.81060500000603,
+          "p95": null,
+          "n": 161,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 287.3510400000014,
+          "p95": null,
+          "n": 180,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 285.19560500001535,
+          "p95": null,
+          "n": 37,
+          "failRate": 0
+        }
+      }
+    },
+    "get-1mb": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 48.09612000003108,
+          "p95": 199.394543349999,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 336.4386620000005,
+          "p95": 375.4162246000196,
+          "n": 60,
+          "failRate": 0.016666666666666666
+        },
+        "freestyle-sf": {
+          "value": 558.4461365000461,
+          "p95": 1046.4739167999533,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 524.9696940000285,
+          "p95": 698.5249004000273,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 824.8921925000614,
+          "p95": 941.7086222500075,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 933.7710015000193,
+          "p95": 1703.4000680500399,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 136.95156499996665,
+          "p95": 309.97233074998934,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 260.93297350002103,
+          "p95": 403.49910360004867,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 257.79630799998995,
+          "p95": 380.10951680005525,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 263.57135450001806,
+          "p95": 389.37878785004125,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 263.7934785000398,
+          "p95": 574.6581451499194,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 323.9254690000671,
+          "p95": 758.3776205999945,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 52.329349999985425,
+          "p95": 143.82147365000708,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 343.29270650001126,
+          "p95": 489.9230384500056,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 307.6046235000249,
+          "p95": 463.60292835000433,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 434.7334939999855,
+          "p95": 678.6014221501591,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 403.3762584999786,
+          "p95": 937.0925721499311,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 436.5245335000218,
+          "p95": 787.9198526999617,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 29.00176850000571,
+          "p95": 70.16595175002291,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 319.46743300004164,
+          "p95": 614.3302838500238,
+          "n": 60,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 616.7305744999903,
+          "p95": 689.1540700000245,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 601.3308490000782,
+          "p95": 782.403824000014,
+          "n": 58,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 856.4329630000284,
+          "p95": 945.7852399499563,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 806.2940579999704,
+          "p95": 878.6607082500238,
+          "n": 30,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 49.414843499980634,
+          "p95": 108.86837869998996,
+          "n": 90,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 335.969803999993,
+          "p95": 392.11854450001846,
+          "n": 60,
+          "failRate": 0.016666666666666666
+        },
+        "freestyle-sf": {
+          "value": 800.0361525000189,
+          "p95": 1172.0176703999691,
+          "n": 60,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 742.0551259999047,
+          "p95": 937.4584494999842,
+          "n": 60,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 881.5373949999339,
+          "p95": 955.8028584499494,
+          "n": 90,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 954.9543390000472,
+          "p95": 1025.0116268500278,
+          "n": 30,
+          "failRate": 0
+        }
+      }
+    },
+    "up-100mb": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 53.497334043645125,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 24.428887739852144,
+          "p95": null,
+          "n": 16,
+          "failRate": 0.0625
+        },
+        "freestyle-sf": {
+          "value": 7.973373744418455,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 19.28333317264403,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 12.53276449901683,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 13.611003806224016,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 32.6261105846122,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 29.36114483692971,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 21.95171114489712,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 24.91980838796834,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 22.758024386341894,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 21.152512629239087,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 76.4642684987157,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 29.20653093384456,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 15.549216188749376,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 18.539033974966248,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 13.781541616198242,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 13.486303952212213,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 44.739673121974896,
+          "p95": null,
+          "n": 24,
+          "failRate": 0.041666666666666664
+        },
+        "ms-a2": {
+          "value": 15.383536654842764,
+          "p95": null,
+          "n": 16,
+          "failRate": 0.0625
+        },
+        "freestyle-sf": {
+          "value": 13.020359473927133,
+          "p95": null,
+          "n": 16,
+          "failRate": 0.0625
+        },
+        "tenki-seattle": {
+          "value": 14.43620115837359,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 11.95562360699132,
+          "p95": null,
+          "n": 24,
+          "failRate": 0.041666666666666664
+        },
+        "boat-lille": {
+          "value": 11.634170756819337,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 38.2019099231719,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 22.384232184253488,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 6.143515027084045,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 14.498598904551535,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 13.062157309041185,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 12.726277609018473,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      }
+    },
+    "get-100mb": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 87.655235161615,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 42.70435445845242,
+          "p95": null,
+          "n": 15,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 20.500830349163913,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 41.485648864669095,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 29.195275880350167,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 3.023295665136692,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 56.969019251398464,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 18.02933536049079,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 36.95645752034217,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 30.422398653249996,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 39.22222709248565,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 16.211685390578396,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 103.53063041331136,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 66.89748251215498,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 46.244417806125014,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 58.716442017141546,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 52.84796030739553,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 19.941744176437865,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 100.28178650653739,
+          "p95": null,
+          "n": 23,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 47.9892111559973,
+          "p95": null,
+          "n": 15,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 29.81881526987379,
+          "p95": null,
+          "n": 15,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 36.26180379809629,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 26.431942985553246,
+          "p95": null,
+          "n": 23,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 18.647117590508447,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 89.57482106123953,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 58.737980972843545,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 17.676892889979133,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 48.82022746387491,
+          "p95": null,
+          "n": 16,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 46.077770482751106,
+          "p95": null,
+          "n": 24,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 3.606186245486363,
+          "p95": null,
+          "n": 8,
+          "failRate": 0
+        }
+      }
+    },
+    "first": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 78.885866000026,
+          "p95": 89.43809649997856,
+          "n": 60,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 144.01682499994058,
+          "p95": 166.0888437999296,
+          "n": 40,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 231.69869449990802,
+          "p95": 248.05344810008535,
+          "n": 40,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 210.25181299995165,
+          "p95": 271.5658935498912,
+          "n": 40,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 309.4447475000052,
+          "p95": 332.9513751998544,
+          "n": 60,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 304.2083429999184,
+          "p95": 321.1131875003222,
+          "n": 20,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 77.44972599996254,
+          "p95": 162.83179184999318,
+          "n": 60,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 113.75298999994993,
+          "p95": 164.78030805004494,
+          "n": 40,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 166.693264500238,
+          "p95": 282.2093509499449,
+          "n": 40,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 133.04321699996945,
+          "p95": 179.27847545014225,
+          "n": 40,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 146.28629300021566,
+          "p95": 261.5423731502145,
+          "n": 60,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 169.68123549991287,
+          "p95": 239.5539984497009,
+          "n": 20,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 19.766996000078507,
+          "p95": 33.49092929996549,
+          "n": 60,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 115.33976800006349,
+          "p95": 268.2509695499668,
+          "n": 40,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 108.24339650012553,
+          "p95": 147.2245597002562,
+          "n": 40,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 154.57014099974185,
+          "p95": 269.9411301999112,
+          "n": 40,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 212.41698600002564,
+          "p95": 274.2854270001757,
+          "n": 60,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 138.22994649992324,
+          "p95": 248.74448454994717,
+          "n": 20,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 13.009771500015631,
+          "p95": 46.463841150019995,
+          "n": 60,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 112.02009700005874,
+          "p95": 325.2662485001143,
+          "n": 40,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 217.17878499999642,
+          "p95": 271.4132196498336,
+          "n": 40,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 202.38718349998817,
+          "p95": 286.14524895001665,
+          "n": 40,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 272.14147449983284,
+          "p95": 309.8137317002518,
+          "n": 60,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 287.29680250003,
+          "p95": 318.283272200171,
+          "n": 20,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 21.298627499956638,
+          "p95": 57.75539584998623,
+          "n": 60,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 130.89013100008015,
+          "p95": 157.10456135002894,
+          "n": 40,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 327.35236050002277,
+          "p95": 368.7556033999892,
+          "n": 40,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 297.6701624999987,
+          "p95": 374.86897699981927,
+          "n": 40,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 349.46492800000124,
+          "p95": 381.5975901498226,
+          "n": 60,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 347.0503865000792,
+          "p95": 359.0781049997546,
+          "n": 20,
+          "failRate": 0
+        }
+      }
+    },
+    "par-up": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 114.27490649995161,
+          "p95": 177.2618698000442,
+          "n": 30,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 212.7949174999958,
+          "p95": 330.5282076501986,
+          "n": 20,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 430.3322379998863,
+          "p95": 675.6330068497452,
+          "n": 20,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 353.0835439998191,
+          "p95": 507.7189300998697,
+          "n": 20,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 448.2445724999998,
+          "p95": 660.12336330018,
+          "n": 30,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 438.46474749967456,
+          "p95": null,
+          "n": 10,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 351.56274799996754,
+          "p95": 978.3372122499968,
+          "n": 30,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 554.6748655001866,
+          "p95": 2563.4599989000244,
+          "n": 20,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 590.9581160000525,
+          "p95": 1169.720919350047,
+          "n": 20,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 557.9237419998972,
+          "p95": 752.667793400027,
+          "n": 20,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 619.055563999922,
+          "p95": 918.2782751500256,
+          "n": 30,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 778.2081634998322,
+          "p95": null,
+          "n": 10,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 173.9778524999856,
+          "p95": 236.28816185004544,
+          "n": 30,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 218.1857635001652,
+          "p95": 402.8181301499135,
+          "n": 20,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 459.1656860001385,
+          "p95": 725.8858396998141,
+          "n": 20,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 521.1957640000619,
+          "p95": 616.6569474998629,
+          "n": 20,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 377.640847499948,
+          "p95": 631.9994554999166,
+          "n": 30,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 390.6789829998743,
+          "p95": null,
+          "n": 10,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 887.6051985000377,
+          "p95": 2524.104598799975,
+          "n": 30,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 897.7215710000601,
+          "p95": null,
+          "n": 20,
+          "failRate": 0.05
+        },
+        "freestyle-sf": {
+          "value": 1159.4504390000366,
+          "p95": null,
+          "n": 20,
+          "failRate": 0.15
+        },
+        "tenki-seattle": {
+          "value": 1045.736917000031,
+          "p95": null,
+          "n": 20,
+          "failRate": 0.05
+        },
+        "railway-amsterdam": {
+          "value": 1198.298210500041,
+          "p95": 1721.189766200166,
+          "n": 30,
+          "failRate": 0.06666666666666667
+        },
+        "boat-lille": {
+          "value": 1189.9312670002691,
+          "p95": null,
+          "n": 10,
+          "failRate": 0.1
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 133.45899900002405,
+          "p95": 452.23546959995815,
+          "n": 30,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 235.13294949987903,
+          "p95": 356.0156803500257,
+          "n": 20,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 490.0938559998758,
+          "p95": 769.6607401996154,
+          "n": 20,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 422.4867544998415,
+          "p95": 710.3046786499327,
+          "n": 20,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 445.7023830001708,
+          "p95": 609.0207147000125,
+          "n": 30,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 467.90761249978095,
+          "p95": null,
+          "n": 10,
+          "failRate": 0
+        }
+      }
+    },
+    "list": {
+      "aws-s3": {
+        "railway-ashburn": {
+          "value": 82.8990234999219,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 114.57591949985363,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 145.44888100004755,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 147.1355414998252,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 171.56944900006056,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 153.68520749965683,
+          "p95": null,
+          "n": 6,
+          "failRate": 0
+        }
+      },
+      "r2": {
+        "railway-ashburn": {
+          "value": 352.38358050002716,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 546.7868480000179,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 748.5708254999481,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 589.7454049997032,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 749.2806209998671,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 879.771438499447,
+          "p95": null,
+          "n": 6,
+          "failRate": 0
+        }
+      },
+      "railway": {
+        "railway-ashburn": {
+          "value": 47.68389000010211,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 75.4334399998188,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 130.36125750024803,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 140.59267200017348,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 135.63899199990556,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 160.01937999995425,
+          "p95": null,
+          "n": 6,
+          "failRate": 0
+        }
+      },
+      "b2": {
+        "railway-ashburn": {
+          "value": 288.8095055000158,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 541.5653229999589,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 520.6373800002038,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 369.02981799980626,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 298.54568400024436,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 1011.4665965000167,
+          "p95": null,
+          "n": 6,
+          "failRate": 0
+        }
+      },
+      "neon": {
+        "railway-ashburn": {
+          "value": 42.565302999923006,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "ms-a2": {
+          "value": 63.89442800008692,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "freestyle-sf": {
+          "value": 124.99217500025406,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "tenki-seattle": {
+          "value": 124.97805749997497,
+          "p95": null,
+          "n": 12,
+          "failRate": 0
+        },
+        "railway-amsterdam": {
+          "value": 118.70523050008342,
+          "p95": null,
+          "n": 18,
+          "failRate": 0
+        },
+        "boat-lille": {
+          "value": 112.25973350042477,
+          "p95": null,
+          "n": 6,
+          "failRate": 0
+        }
+      }
+    }
+  },
+  "reliability": {
+    "aws-s3": {
+      "railway-ashburn": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 1988,
+        "failures": 2
+      },
+      "freestyle-sf": {
+        "samples": 1992,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 2197,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 881,
+        "failures": 0
+      }
+    },
+    "r2": {
+      "railway-ashburn": {
+        "samples": 2984,
+        "failures": 1
+      },
+      "ms-a2": {
+        "samples": 1992,
+        "failures": 0
+      },
+      "freestyle-sf": {
+        "samples": 1992,
+        "failures": 1
+      },
+      "tenki-seattle": {
+        "samples": 2194,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 876,
+        "failures": 0
+      }
+    },
+    "railway": {
+      "railway-ashburn": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 1992,
+        "failures": 0
+      },
+      "freestyle-sf": {
+        "samples": 1992,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 2197,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 881,
+        "failures": 0
+      }
+    },
+    "b2": {
+      "railway-ashburn": {
+        "samples": 2982,
+        "failures": 1
+      },
+      "ms-a2": {
+        "samples": 1987,
+        "failures": 2
+      },
+      "freestyle-sf": {
+        "samples": 1973,
+        "failures": 7
+      },
+      "tenki-seattle": {
+        "samples": 2180,
+        "failures": 5
+      },
+      "railway-amsterdam": {
+        "samples": 2962,
+        "failures": 10
+      },
+      "boat-lille": {
+        "samples": 879,
+        "failures": 1
+      }
+    },
+    "neon": {
+      "railway-ashburn": {
+        "samples": 2988,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 1990,
+        "failures": 1
+      },
+      "freestyle-sf": {
+        "samples": 1992,
+        "failures": 1
+      },
+      "tenki-seattle": {
+        "samples": 2197,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 2988,
+        "failures": 1
+      },
+      "boat-lille": {
+        "samples": 881,
+        "failures": 0
+      }
+    }
+  },
+  "uploadReliability": {
+    "aws-s3": {
+      "railway-ashburn": {
+        "samples": 654,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 436,
+        "failures": 1
+      },
+      "freestyle-sf": {
+        "samples": 436,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 477,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 654,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 195,
+        "failures": 0
+      }
+    },
+    "r2": {
+      "railway-ashburn": {
+        "samples": 654,
+        "failures": 1
+      },
+      "ms-a2": {
+        "samples": 436,
+        "failures": 0
+      },
+      "freestyle-sf": {
+        "samples": 436,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 477,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 654,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 194,
+        "failures": 0
+      }
+    },
+    "railway": {
+      "railway-ashburn": {
+        "samples": 654,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 436,
+        "failures": 0
+      },
+      "freestyle-sf": {
+        "samples": 436,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 477,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 654,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 195,
+        "failures": 0
+      }
+    },
+    "b2": {
+      "railway-ashburn": {
+        "samples": 654,
+        "failures": 5
+      },
+      "ms-a2": {
+        "samples": 436,
+        "failures": 4
+      },
+      "freestyle-sf": {
+        "samples": 436,
+        "failures": 8
+      },
+      "tenki-seattle": {
+        "samples": 477,
+        "failures": 6
+      },
+      "railway-amsterdam": {
+        "samples": 654,
+        "failures": 10
+      },
+      "boat-lille": {
+        "samples": 194,
+        "failures": 2
+      }
+    },
+    "neon": {
+      "railway-ashburn": {
+        "samples": 654,
+        "failures": 0
+      },
+      "ms-a2": {
+        "samples": 436,
+        "failures": 0
+      },
+      "freestyle-sf": {
+        "samples": 436,
+        "failures": 0
+      },
+      "tenki-seattle": {
+        "samples": 477,
+        "failures": 0
+      },
+      "railway-amsterdam": {
+        "samples": 654,
+        "failures": 0
+      },
+      "boat-lille": {
+        "samples": 195,
+        "failures": 0
+      }
+    }
+  },
+  "errors": [
+    {
+      "provider": "b2",
+      "message": "FilesError: socket hang up",
+      "count": 27
+    },
+    {
+      "provider": "b2",
+      "message": "FilesError: internal incident",
+      "count": 8
+    },
+    {
+      "provider": "b2",
+      "message": "FilesError: write EPIPE",
+      "count": 2
+    },
+    {
+      "provider": "neon",
+      "message": "FilesError: Neon error",
+      "count": 1
+    },
+    {
+      "provider": "neon",
+      "message": "seed failed: setup: FilesError: Neon error",
+      "count": 1
+    },
+    {
+      "provider": "neon",
+      "message": "TypeError: fetch failed",
+      "count": 1
+    },
+    {
+      "provider": "aws-s3",
+      "message": "TypeError: fetch failed",
+      "count": 1
+    },
+    {
+      "provider": "r2",
+      "message": "FilesError: read ECONNRESET",
+      "count": 1
+    },
+    {
+      "provider": "r2",
+      "message": "TypeError: fetch failed",
+      "count": 1
+    },
+    {
+      "provider": "neon",
+      "message": "FilesError: socket hang up",
+      "count": 1
+    },
+    {
+      "provider": "aws-s3",
+      "message": "FilesError: read ETIMEDOUT",
+      "count": 1
+    }
+  ],
+  "costs": {
+    "checkedOn": "2026-10-09",
+    "workloads": [
+      {
+        "name": "Side project",
+        "what": "10 GB stored, 50 GB served, 100k uploads, 1M reads"
+      },
+      {
+        "name": "SaaS with user uploads",
+        "what": "500 GB stored, 2 TB served, 5M uploads, 50M reads"
+      },
+      {
+        "name": "Media-heavy app",
+        "what": "10 TB stored, 50 TB served, 20M uploads, 500M reads"
+      }
+    ],
+    "rows": [
+      {
+        "id": "aws-s3",
+        "label": "Amazon S3",
+        "model": "$0.023/GB-month, $0.005 per 1k writes, $0.0004 per 1k reads, egress $0.09/GB after 100 GB/month free (then $0.085, $0.07 tiers)",
+        "source": "https://aws.amazon.com/s3/pricing/ (storage, requests, and data transfer tabs, US East (Ohio)); same values in the AWS Price List API, AmazonS3 and AWSDataTransfer offers",
+        "monthly": [
+          1.13,
+          227.5,
+          4821.5
+        ]
+      },
+      {
+        "id": "r2",
+        "label": "Cloudflare R2",
+        "model": "$0.015/GB-month after 10 GB free, $4.50 per 1M writes after 1M, $0.36 per 1M reads after 10M, egress free",
+        "source": "https://developers.cloudflare.com/r2/pricing/",
+        "monthly": [
+          0,
+          39.75,
+          411.75
+        ]
+      },
+      {
+        "id": "railway",
+        "label": "Railway Buckets",
+        "model": "$0.015/GB-month, requests and egress free. The Free plan covers up to 10 GB-month with its $1 monthly credit; Hobby ($5/month, counted toward usage) caps storage at 1 TB; Pro ($20/month, counted toward usage) has no cap",
+        "source": "https://docs.railway.com/storage-buckets/billing",
+        "monthly": [
+          0,
+          7.5,
+          150
+        ]
+      },
+      {
+        "id": "b2",
+        "label": "Backblaze B2",
+        "model": "$6.95/TB-month after 10 GB free, class A/B/C requests free, egress free up to 3x stored then $0.01/GB",
+        "source": "https://www.backblaze.com/cloud-storage/pricing",
+        "monthly": [
+          0.2,
+          8.4055,
+          269.4305
+        ]
+      },
+      {
+        "id": "neon",
+        "label": "Neon",
+        "model": "$0.023/GB-month, requests free, 500 GB/month egress per project then $0.10/GB (shared with Postgres traffic)",
+        "source": "https://neon.com/pricing",
+        "monthly": [
+          0.22999999999999998,
+          161.5,
+          5180
+        ]
+      }
+    ]
+  },
+  "runDates": [
+    "2026-10-09",
+    "2026-10-15"
+  ],
+  "runs": 14
+}

@@ -1,0 +1,34 @@
+{
+  "name": "storage-bench",
+  "version": "1.0.0",
+  "description": "",
+  "main": "idle.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bench": "node --experimental-strip-types src/bench.ts",
+    "report": "node --experimental-strip-types src/report.ts",
+    "typecheck": "tsc -p .",
+    "start": "node idle.mjs",
+    "costs": "node --experimental-strip-types src/costs.ts",
+    "site:data": "node --experimental-strip-types src/site-data.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1148.0",
+    "@aws-sdk/lib-storage": "3.1148.0",
+    "@aws-sdk/s3-presigned-post": "3.1148.0",
+    "@aws-sdk/s3-request-presigner": "3.1148.0",
+    "files-sdk": "3.0.0",
+    "node-appwrite": "29.2.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

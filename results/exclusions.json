@@ -1,0 +1,20 @@
+[
+  {
+    "client": "tenki-seattle",
+    "from": "2026-10-09T20:39:00.396Z",
+    "to": "2026-10-09T21:06:51.638Z",
+    "reason": "Tenki paused the sandbox twice when it hit its default maximum run time. Any sample whose request overlaps the pause is dropped. The sandbox was made sticky afterwards."
+  },
+  {
+    "client": "boat-lille",
+    "from": "2026-10-15T20:13:59.000Z",
+    "to": "2026-10-15T20:15:53.000Z",
+    "reason": "A campaign restart briefly started a second run on the same machine. The duplicate was stopped and its data deleted; samples from the surviving run during the overlap are dropped."
+  },
+  {
+    "client": "freestyle-sf",
+    "from": "2026-10-15T22:05:48.000Z",
+    "to": "2026-10-15T22:06:35.000Z",
+    "reason": "A campaign restart briefly started a second run on the same machine. The duplicate was stopped and its data deleted; samples from the surviving run during the overlap are dropped."
+  }
+]

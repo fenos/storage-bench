@@ -1,0 +1,86 @@
+{
+  "checkedOn": "2026-10-09",
+  "workloads": [
+    {
+      "name": "Side project",
+      "what": "10 GB stored, 50 GB served, 100k uploads, 1M reads",
+      "storedGb": 10,
+      "egressGb": 50,
+      "writes": 100000,
+      "reads": 1000000
+    },
+    {
+      "name": "SaaS with user uploads",
+      "what": "500 GB stored, 2 TB served, 5M uploads, 50M reads",
+      "storedGb": 500,
+      "egressGb": 2000,
+      "writes": 5000000,
+      "reads": 50000000
+    },
+    {
+      "name": "Media-heavy app",
+      "what": "10 TB stored, 50 TB served, 20M uploads, 500M reads",
+      "storedGb": 10000,
+      "egressGb": 50000,
+      "writes": 20000000,
+      "reads": 500000000
+    }
+  ],
+  "costs": [
+    {
+      "id": "aws-s3",
+      "label": "Amazon S3 (us-east-2)",
+      "model": "$0.023/GB-month, $0.005 per 1k writes, $0.0004 per 1k reads, egress $0.09/GB after 100 GB/month free (then $0.085, $0.07 tiers)",
+      "source": "https://aws.amazon.com/s3/pricing/ (storage, requests, and data transfer tabs, US East (Ohio)); same values in the AWS Price List API, AmazonS3 and AWSDataTransfer offers",
+      "monthly": [
+        1.13,
+        227.5,
+        4821.5
+      ]
+    },
+    {
+      "id": "r2",
+      "label": "Cloudflare R2",
+      "model": "$0.015/GB-month after 10 GB free, $4.50 per 1M writes after 1M, $0.36 per 1M reads after 10M, egress free",
+      "source": "https://developers.cloudflare.com/r2/pricing/",
+      "monthly": [
+        0,
+        39.75,
+        411.75
+      ]
+    },
+    {
+      "id": "railway",
+      "label": "Railway Buckets",
+      "model": "$0.015/GB-month, requests and egress free. The Free plan covers up to 10 GB-month with its $1 monthly credit; Hobby ($5/month, counted toward usage) caps storage at 1 TB; Pro ($20/month, counted toward usage) has no cap",
+      "source": "https://docs.railway.com/storage-buckets/billing",
+      "monthly": [
+        0,
+        7.5,
+        150
+      ]
+    },
+    {
+      "id": "b2",
+      "label": "Backblaze B2",
+      "model": "$6.95/TB-month after 10 GB free, class A/B/C requests free, egress free up to 3x stored then $0.01/GB",
+      "source": "https://www.backblaze.com/cloud-storage/pricing",
+      "monthly": [
+        0.2,
+        8.4055,
+        269.4305
+      ]
+    },
+    {
+      "id": "neon",
+      "label": "Neon (Launch plan)",
+      "model": "$0.023/GB-month, requests free, 500 GB/month egress per project then $0.10/GB (shared with Postgres traffic)",
+      "source": "https://neon.com/pricing",
+      "monthly": [
+        0.22999999999999998,
+        161.5,
+        5180
+      ]
+    }
+  ]
+}

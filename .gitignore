@@ -1,0 +1,7 @@
+.env*
+node_modules
+results/raw
+results/smoke
+!.env.example
+logs/
+results/archive/
