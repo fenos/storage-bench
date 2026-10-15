@@ -56,7 +56,7 @@ A full run does 60 round trips at 1 KB and 100 KB, 30 at 1 MB, 20 at 10 MB, 8 at
 | `railway-ashburn` | Ashburn, Virginia | Railway (us-east4) |
 | `ms-a2` | Florida | A Minisforum MS-A2 on a home AT&T line |
 | `freestyle-sf` | San Francisco | Freestyle VM |
-| `tenki-seattle` | Seattle | Tenki sandbox VM. The third pass ran on a replacement sandbox on Luxor's network (AS19538) after the first sandbox's disk failed; the first two ran on Wowrack (AS23033). |
+| `tenki-seattle` | Seattle | Tenki sandbox VM. The 2026-10-09 pass ran on Wowrack's network (AS23033) and both 2026-10-15 passes on Luxor's (AS19538), Tenki's parent company. The last pass ran on a replacement sandbox after the first sandbox's disk failed. |
 | `railway-amsterdam` | Amsterdam | Railway (europe-west4) |
 | `boat-lille` | Lille, France | boat sandbox (OVH) |
 

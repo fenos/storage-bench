@@ -109,7 +109,7 @@ export function BenchPage({ results }: { results: Results }) {
     .map((p) => {
       const r = results.uploadReliability[p.id]?.[client.id] ?? { samples: 0, failures: 0 };
       const rate = r.samples > 0 ? r.failures / r.samples : 0;
-      return { id: p.id, label: p.label, sub: p.place, value: rate, text: failureText(rate), detail: `${p.label}: ${r.failures} of ${r.samples.toLocaleString("en-US")} uploads failed` };
+      return { id: p.id, label: p.label, sub: p.place, value: rate, text: failureText(rate), detail: `${p.label}: ${r.failures} of ${r.samples.toLocaleString("en-US")} upload attempts failed` };
     })
     .sort((a, b) => a.value - b.value);
 
@@ -158,7 +158,7 @@ export function BenchPage({ results }: { results: Results }) {
             </Chart>
           );
         })}
-        <Chart title="Failed uploads" note="each tried once, no retries">
+        <Chart title="Failed upload attempts" note="no retries; a parallel batch counts once">
           {all ? <Matrix columns={columns} rows={failureMatrix} better="lower" scaleMax={0.02} /> : <Bars rows={failureRows} empty="No results from here yet." scaleMax={0.02} />}
         </Chart>
         <Chart title="Monthly cost" note={results.costs.workloads[w]?.what ?? ""}>

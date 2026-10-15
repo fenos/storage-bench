@@ -23,7 +23,7 @@ Monthly cost from list prices, for 500 GB stored, 2 TB served, 5M uploads, and 5
 |---|---|---|---|---|
 | $7.50 | $8.41 | $39.75 | $162 | $228 |
 
-With no retries, Backblaze B2 dropped 49 of 3,670 uploads (1.3%), from every location. Railway dropped none, and S3, R2, and Neon dropped one or two each.
+With no retries, Backblaze B2 failed 49 of 3,670 upload attempts (1.3%), from every location: 24 single uploads and 25 parallel batches, where a batch fails if any upload in it does. Railway had no failures, and S3, R2, and Neon had one or two each.
 
 Two of the six test machines run on Railway's own network, which may favor Railway Buckets. The site marks them, and every other caveat is in the [methodology](docs/METHODOLOGY.md).
 
