@@ -16,7 +16,7 @@ loc=${1:?location}
 action=${2:?action}
 shift 2
 
-TENKI_SESSION=01a12235-27fc-75ed-8d52-0ea2f6c01482
+TENKI_SESSION=01a141b4-7331-794a-b7a9-00a7803df620
 FREESTYLE_VM=vm-aa4625cf969f4e4297f86a09c32ab4e2
 BOAT_BOX=bx_6276vfhv
 LOCAL_DIR="$HOME/.cache/storage-bench-run"

@@ -171,7 +171,7 @@ export function BenchPage({ results }: { results: Results }) {
 
       <footer className="flex flex-wrap justify-between gap-2 border-t border-border py-6 text-xs text-muted-foreground">
         <span>Medians of {results.runs} runs through files-sdk 3.0.0</span>
-        <a className="hover:text-foreground" href={`${REPO}#how-it-stays-fair`}>
+        <a className="hover:text-foreground" href={`${REPO}/blob/main/docs/METHODOLOGY.md`}>
           How it was measured
         </a>
       </footer>

@@ -5,3 +5,4 @@ results/smoke
 !.env.example
 logs/
 results/archive/
+.vercel
