@@ -39,6 +39,7 @@ export const providerInfo: Record<ProviderId, { label: string; place: string; re
   railway: { label: "Railway Buckets", place: "Virginia", region: "iad", at: [38.95, -77.45] },
   b2: { label: "Backblaze B2", place: "Eastern US", region: "us-east-005", at: [38.96, -77.36] },
   neon: { label: "Neon", place: "Virginia", region: "aws us-east-1", at: [39.04, -77.49] },
+  supabase: { label: "Supabase Storage", place: "Frankfurt", region: "aws eu-central-1", at: [50.11, 8.68] },
 };
 
 export const clientIds = ["railway-ashburn", "ms-a2", "freestyle-sf", "tenki-seattle", "railway-amsterdam", "boat-lille"] as const;
@@ -130,10 +131,12 @@ export type Model = {
 
 export const buildModel = (summary: z.infer<typeof summarySchema>, costs: z.infer<typeof costsSchema>): Model => {
   const clients = clientIds.filter((c) => summary.rows.some((r) => r.client === c));
+  // A provider with no samples yet (one just added) stays off the site instead of showing empty or 0% rows.
+  const providers = providerIds.filter((p) => summary.rows.some((r) => r.provider === p));
   const data: Model["data"] = {};
   for (const m of metricSpecs) {
     const byProvider: Record<string, Record<string, Cell | null>> = {};
-    for (const p of providerIds) {
+    for (const p of providers) {
       const spec = m.ops.find((o) => o.providers?.includes(p)) ?? m.ops.find((o) => o.providers === undefined);
       const byClient: Record<string, Cell | null> = {};
       for (const c of clients) {
@@ -147,7 +150,7 @@ export const buildModel = (summary: z.infer<typeof summarySchema>, costs: z.infe
   }
 
   const reliability: Model["reliability"] = {};
-  for (const p of providerIds) {
+  for (const p of providers) {
     reliability[p] = {};
     for (const c of clients) {
       // The 32-upload burst is its own stress test, so it isn't counted here.
@@ -158,7 +161,7 @@ export const buildModel = (summary: z.infer<typeof summarySchema>, costs: z.infe
 
   const uploadOps = new Set(["upload", "concurrent-upload", "burst-upload", "signed-upload"]);
   const uploadReliability: Model["uploadReliability"] = {};
-  for (const p of providerIds) {
+  for (const p of providers) {
     uploadReliability[p] = {};
     for (const c of clients) {
       const rows = summary.rows.filter((r) => r.provider === p && r.client === c && uploadOps.has(r.op));
@@ -174,7 +177,7 @@ export const buildModel = (summary: z.infer<typeof summarySchema>, costs: z.infe
 
   return {
     metrics: metricSpecs.map(({ id, title, note, value, better, batch }) => ({ id, title, note, value, better, batch })),
-    providers: providerIds.map((id) => ({ id, ...providerInfo[id] })),
+    providers: providers.map((id) => ({ id, ...providerInfo[id] })),
     clients: clients.map((id) => ({ id, ...clientInfo[id], runs: summary.runs.filter((r) => r.client === id).length })),
     data,
     reliability,
