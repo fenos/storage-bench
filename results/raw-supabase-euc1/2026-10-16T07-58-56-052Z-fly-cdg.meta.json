@@ -1,0 +1,22 @@
+{
+  "runId": "2026-10-16T07-58-56-052Z-fly-cdg",
+  "client": "fly-cdg",
+  "location": {
+    "city": "Paris",
+    "region": "Île-de-France",
+    "country": "FR",
+    "org": "AS30081 CacheFly"
+  },
+  "profile": "smoke",
+  "providers": [
+    {
+      "id": "supabase",
+      "label": "Supabase Storage",
+      "region": "eu-central-1"
+    }
+  ],
+  "node": "v24.22.0",
+  "filesSdk": "3.0.0",
+  "codeVersion": "f38ad93-supabase-wip",
+  "startedAt": "2026-10-16T07:58:56.406Z"
+}

@@ -1,0 +1,22 @@
+{
+  "runId": "2026-10-16T08-20-41-871Z-fly-sjc",
+  "client": "fly-sjc",
+  "location": {
+    "city": "Santa Clara",
+    "region": "California",
+    "country": "US",
+    "org": "AS396356 Latitude.sh"
+  },
+  "profile": "full",
+  "providers": [
+    {
+      "id": "supabase",
+      "label": "Supabase Storage",
+      "region": "us-east-1"
+    }
+  ],
+  "node": "v24.22.0",
+  "filesSdk": "3.0.0",
+  "codeVersion": "f38ad93",
+  "startedAt": "2026-10-16T08:20:42.163Z"
+}

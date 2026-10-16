@@ -1,0 +1,22 @@
+{
+  "runId": "2026-10-16T08-14-16-455Z-fly-iad",
+  "client": "fly-iad",
+  "location": {
+    "city": "Ashburn",
+    "region": "Virginia",
+    "country": "US",
+    "org": "AS60068 Datacamp Limited"
+  },
+  "profile": "smoke",
+  "providers": [
+    {
+      "id": "supabase",
+      "label": "Supabase Storage",
+      "region": "us-east-1"
+    }
+  ],
+  "node": "v24.22.0",
+  "filesSdk": "3.0.0",
+  "codeVersion": "f38ad93-supabase-wip",
+  "startedAt": "2026-10-16T08:14:16.740Z"
+}
