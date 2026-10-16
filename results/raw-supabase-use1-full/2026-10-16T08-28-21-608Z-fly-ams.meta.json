@@ -1,0 +1,22 @@
+{
+  "runId": "2026-10-16T08-28-21-608Z-fly-ams",
+  "client": "fly-ams",
+  "location": {
+    "city": "Amsterdam",
+    "region": "North Holland",
+    "country": "NL",
+    "org": "AS60068 Datacamp Limited"
+  },
+  "profile": "full",
+  "providers": [
+    {
+      "id": "supabase",
+      "label": "Supabase Storage",
+      "region": "us-east-1"
+    }
+  ],
+  "node": "v24.22.0",
+  "filesSdk": "3.0.0",
+  "codeVersion": "f38ad93",
+  "startedAt": "2026-10-16T08:28:21.926Z"
+}

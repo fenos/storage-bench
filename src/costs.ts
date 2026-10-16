@@ -101,6 +101,15 @@ const prices: readonly Price[] = [
     model: "$0.023/GB-month, requests free, 500 GB/month egress per project then $0.10/GB (shared with Postgres traffic)",
     monthly: (w) => w.storedGb * 0.023 + over(w.egressGb, 500) * 0.1,
   },
+  {
+    id: "supabase",
+    label: "Supabase Storage (Pro plan)",
+    source:
+      "https://supabase.com/pricing, https://supabase.com/docs/guides/storage/pricing and https://supabase.com/docs/guides/platform/manage-your-usage/egress (checked 2026-10-16)",
+    model:
+      "$25/month Pro plan (its $10 compute credit covers the Micro instance), 100 GB stored then $0.0213/GB-month, 250 GB uncached egress then $0.09/GB, no per-request charges listed. Egress is priced at the uncached rate; egress served from the Smart CDN cache is $0.03/GB",
+    monthly: (w) => 25 + over(w.storedGb, 100) * 0.0213 + over(w.egressGb, 250) * 0.09,
+  },
 ];
 
 const usd = (n: number): string => (n >= 100 ? `$${Math.round(n).toLocaleString("en-US")}` : `$${n.toFixed(2)}`);

@@ -5,7 +5,7 @@ import { r2 } from "files-sdk/r2";
 import { s3 } from "files-sdk/s3";
 import { z } from "zod";
 
-export const providerIds = ["aws-s3", "r2", "railway", "b2", "neon"] as const;
+export const providerIds = ["aws-s3", "r2", "railway", "b2", "neon", "supabase"] as const;
 export type ProviderId = (typeof providerIds)[number];
 
 export type Provider = {
@@ -55,6 +55,16 @@ const specs = {
     NEON_REGION: nonEmpty,
     NEON_ACCESS_KEY_ID: nonEmpty,
     NEON_SECRET_ACCESS_KEY: nonEmpty,
+  }),
+  supabase: z.object({
+    SUPABASE_S3_BUCKET: nonEmpty,
+    SUPABASE_S3_ENDPOINT: z.url(),
+    SUPABASE_S3_REGION: nonEmpty,
+    SUPABASE_S3_ACCESS_KEY_ID: nonEmpty,
+    SUPABASE_S3_SECRET_ACCESS_KEY: nonEmpty,
+    // The project's upload size limit (Storage settings, 50 MB by default) also caps multipart totals.
+    // Left empty, it means no cap (an empty string must not coerce to 0 and drop the provider).
+    SUPABASE_MAX_OBJECT_MB: z.preprocess((v) => (v === "" ? undefined : v), z.coerce.number().positive().optional()),
   }),
 } satisfies Record<ProviderId, z.ZodType>;
 
@@ -161,6 +171,30 @@ const build = (id: ProviderId, env: Env): Provider | undefined => {
               region: v.NEON_REGION,
               accessKeyId: v.NEON_ACCESS_KEY_ID,
               secretAccessKey: v.NEON_SECRET_ACCESS_KEY,
+            }),
+          }),
+      };
+    }
+    case "supabase": {
+      const e = specs.supabase.safeParse(env);
+      if (!e.success) return undefined;
+      const v = e.data;
+      return {
+        id,
+        label: "Supabase Storage",
+        region: v.SUPABASE_S3_REGION,
+        ...(v.SUPABASE_MAX_OBJECT_MB !== undefined ? { maxObjectBytes: v.SUPABASE_MAX_OBJECT_MB * 1024 * 1024 } : {}),
+        // Supabase's S3-compatible endpoint, not files-sdk/supabase: that adapter uses the REST API and has no range reads.
+        connect: () =>
+          new Files({
+            retries: 0,
+            adapter: s3({
+              bucket: v.SUPABASE_S3_BUCKET,
+              region: v.SUPABASE_S3_REGION,
+              endpoint: v.SUPABASE_S3_ENDPOINT,
+              // Supabase only serves path-style requests: <endpoint>/<bucket>/<key>.
+              forcePathStyle: true,
+              credentials: { accessKeyId: v.SUPABASE_S3_ACCESS_KEY_ID, secretAccessKey: v.SUPABASE_S3_SECRET_ACCESS_KEY },
             }),
           }),
       };

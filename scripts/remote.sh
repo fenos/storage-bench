@@ -7,7 +7,8 @@
 #   scripts/remote.sh <location> pull
 #   scripts/remote.sh <location> clean
 #
-# Locations: ms-a2, railway-ashburn, railway-amsterdam, tenki-seattle, freestyle-sf, boat-lille.
+# Locations: ms-a2, railway-ashburn, railway-amsterdam, tenki-seattle, freestyle-sf, boat-lille, and
+# fly-<region> (e.g. fly-iad, fly-fra) for the Fly.io machines in docs/FLY.md. FLY_APP names the Fly app.
 # Results land in results/raw/ here; each run writes its own <runId>.jsonl and .meta.json.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -21,10 +22,19 @@ FREESTYLE_VM=vm-aa4625cf969f4e4297f86a09c32ab4e2
 BOAT_BOX=bx_6276vfhv
 LOCAL_DIR="$HOME/.cache/storage-bench-run"
 FREESTYLE="$HOME/.bun/bin/freestyle"
+FLY_APP=${FLY_APP:-supabase-storage-bench}
 
 # Railway's CLI prints config-as-code deprecation notes on every call; keep them out of piped data.
 railway_quiet() {
   sed -E 's/warning: Config as Code.*$//' | grep -v -iE '^ *→ Migrate:|Existing files keep working|Using SSH key' || true
+}
+
+# fly ssh console runs -C without a shell, so the script travels base64-encoded and is decoded by sh there.
+# The session gets the app's Fly secrets as environment variables, so there is no .env file to load.
+fly_sh() {
+  local encoded
+  encoded=$(printf '%s' "$1" | base64 | tr -d '\n')
+  timeout 120 fly ssh console -q -a "$FLY_APP" -r "${loc#fly-}" -C "sh -c 'echo $encoded | base64 -d | sh'"
 }
 
 bundle() {
@@ -41,6 +51,7 @@ remote_sh() {
     tenki-seattle) timeout 120 tenki sandbox exec --session "$TENKI_SESSION" -c "cd /home/tenki/bench && set -a && . ./.env && set +a && $script" 2>&1 | sed -e '/^status *:/,$d' -e '/^$/d' ;;
     freestyle-sf) timeout 120 "$FREESTYLE" vm exec "$FREESTYLE_VM" -- bash -c "cd /home/ubuntu/bench && set -a && . ./.env && set +a && $script" 2>&1 ;;
     boat-lille) timeout 120 boat ssh "$BOAT_BOX" -- "cd /home/user/bench && set -a && . ./.env && set +a && $script" 2>&1 ;;
+    fly-*) fly_sh "cd /app && $script" 2>&1 ;;
     *) echo "unknown location $loc" >&2; exit 2 ;;
   esac
 }
@@ -75,6 +86,9 @@ case $action in
         boat scp .env "$BOAT_BOX:/home/user/bench/.env" >/dev/null
         timeout 300 boat ssh "$BOAT_BOX" -- 'cd /home/user/bench && rm -rf src && tar xzf ../storage-bench.tgz && chmod 600 .env && npm ci --no-audit --no-fund >/dev/null 2>&1 && echo pushed'
         ;;
+      # Redeploying restarts the machine and kills any run on it, so only this location's region is touched.
+      # Credentials are Fly secrets (docs/FLY.md), not the local .env.
+      fly-*) timeout 900 fly deploy -a "$FLY_APP" --regions "${loc#fly-}" --ha=false --yes 2>&1 | tail -1 ;;
     esac
     ;;
   start)
@@ -112,6 +126,7 @@ case $action in
         tenki-seattle) tenki sandbox read --session "$TENKI_SESSION" --path "/home/tenki/bench/results/raw/$f" > "$tmp" ;;
         freestyle-sf) "$FREESTYLE" vm scp "$FREESTYLE_VM:/home/ubuntu/bench/results/raw/$f" "$tmp" >/dev/null ;;
         boat-lille) boat scp "$BOAT_BOX:/home/user/bench/results/raw/$f" "$tmp" >/dev/null ;;
+        fly-*) fly ssh sftp get -q -a "$FLY_APP" -r "${loc#fly-}" "/app/results/raw/$f" "$tmp" >/dev/null ;;
       esac
       if node -e 'const t=require("fs").readFileSync(process.argv[1],"utf8"); if (process.argv[1].endsWith(".jsonl")) t.split("\n").filter(l=>l.trim()).forEach(l=>JSON.parse(l)); else JSON.parse(t);' "$tmp" 2>/dev/null && [ -s "$tmp" ]; then
         mv "$tmp" "results/raw/$f"

@@ -1,0 +1,1815 @@
+{
+  "runs": [
+    {
+      "runId": "2026-10-16T08-20-39-279Z-fly-ams",
+      "client": "fly-ams",
+      "profile": "full",
+      "location": {
+        "region": "North Holland",
+        "country": "NL",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:20:39.499Z"
+    },
+    {
+      "runId": "2026-10-16T08-20-39-556Z-fly-cdg",
+      "client": "fly-cdg",
+      "profile": "full",
+      "location": {
+        "region": "Île-de-France",
+        "country": "FR",
+        "org": "AS30081 CacheFly"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:20:39.928Z"
+    },
+    {
+      "runId": "2026-10-16T08-20-41-045Z-fly-iad",
+      "client": "fly-iad",
+      "profile": "full",
+      "location": {
+        "region": "Virginia",
+        "country": "US",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:20:41.182Z"
+    },
+    {
+      "runId": "2026-10-16T08-20-41-871Z-fly-sjc",
+      "client": "fly-sjc",
+      "profile": "full",
+      "location": {
+        "region": "California",
+        "country": "US",
+        "org": "AS396356 Latitude.sh"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:20:42.163Z"
+    },
+    {
+      "runId": "2026-10-16T08-25-21-046Z-fly-iad",
+      "client": "fly-iad",
+      "profile": "full",
+      "location": {
+        "region": "Virginia",
+        "country": "US",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:25:21.272Z"
+    },
+    {
+      "runId": "2026-10-16T08-28-21-608Z-fly-ams",
+      "client": "fly-ams",
+      "profile": "full",
+      "location": {
+        "region": "North Holland",
+        "country": "NL",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:28:21.926Z"
+    },
+    {
+      "runId": "2026-10-16T08-28-22-479Z-fly-cdg",
+      "client": "fly-cdg",
+      "profile": "full",
+      "location": {
+        "region": "Île-de-France",
+        "country": "FR",
+        "org": "AS30081 CacheFly"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:28:22.716Z"
+    },
+    {
+      "runId": "2026-10-16T08-28-43-862Z-fly-sjc",
+      "client": "fly-sjc",
+      "profile": "full",
+      "location": {
+        "region": "California",
+        "country": "US",
+        "org": "AS396356 Latitude.sh"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:28:44.196Z"
+    },
+    {
+      "runId": "2026-10-16T08-30-19-253Z-fly-iad",
+      "client": "fly-iad",
+      "profile": "full",
+      "location": {
+        "region": "Virginia",
+        "country": "US",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:30:19.415Z"
+    },
+    {
+      "runId": "2026-10-16T08-35-58-131Z-fly-sjc",
+      "client": "fly-sjc",
+      "profile": "full",
+      "location": {
+        "region": "California",
+        "country": "US",
+        "org": "AS396356 Latitude.sh"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:35:58.852Z"
+    },
+    {
+      "runId": "2026-10-16T08-36-09-028Z-fly-cdg",
+      "client": "fly-cdg",
+      "profile": "full",
+      "location": {
+        "region": "Île-de-France",
+        "country": "FR",
+        "org": "AS30081 CacheFly"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:36:09.362Z"
+    },
+    {
+      "runId": "2026-10-16T08-37-12-472Z-fly-ams",
+      "client": "fly-ams",
+      "profile": "full",
+      "location": {
+        "region": "North Holland",
+        "country": "NL",
+        "org": "AS60068 Datacamp Limited"
+      },
+      "providers": [
+        {
+          "id": "supabase",
+          "label": "Supabase Storage",
+          "region": "us-east-1"
+        }
+      ],
+      "node": "v24.22.0",
+      "filesSdk": "3.0.0",
+      "startedAt": "2026-10-16T08:37:12.693Z"
+    }
+  ],
+  "rows": [
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 196.86236250000184,
+      "p95": 308.8573525499992,
+      "p99": 562.3401583699996,
+      "mbpsP50": 0.005201603734690477
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 117.47118649999902,
+      "p95": 174.93735530000492,
+      "p99": 295.87837714
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 149.41955849999795,
+      "p95": 262.03025735000017,
+      "p99": 589.1660961500024,
+      "ttfbP50": 149.24085800000012,
+      "mbpsP50": 0.00685318582305953
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 168.96449949999806,
+      "p95": 365.38705560000056,
+      "p99": 508.20460536999747,
+      "ttfbP50": 168.8680029999996,
+      "mbpsP50": 0.006060444667549894
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 154.75844400000005,
+      "p95": 264.2652687499964,
+      "p99": 874.5070841299987
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 300.98256550000224,
+      "p95": 570.6935853500084,
+      "p99": 705.8007760400005,
+      "mbpsP50": 0.34021904169063655
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 116.41420400000061,
+      "p95": 239.12359504999995,
+      "p99": 475.94494229000304
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 152.63499699999375,
+      "p95": 310.32887560000336,
+      "p99": 646.0679384200007,
+      "ttfbP50": 151.11216749999585,
+      "mbpsP50": 0.670881527910694
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 171.7476725000015,
+      "p95": 515.656520450004,
+      "p99": 744.4731632200014,
+      "ttfbP50": 167.05134300000645,
+      "mbpsP50": 0.5962235092297924
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 155.25496949999797,
+      "p95": 314.5706919499919,
+      "p99": 540.6071085600015
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 374.5481795000014,
+      "p95": 662.1979127000055,
+      "p99": 905.1821404500133,
+      "mbpsP50": 2.7995757485720096
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 118.34225900001184,
+      "p95": 284.28082529998926,
+      "p99": 622.5835528800064
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 172.52636850001,
+      "p95": 309.741131350003,
+      "p99": 418.61793870999753,
+      "ttfbP50": 149.87927999999374,
+      "mbpsP50": 6.077772395701584
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 199.74373950000154,
+      "p95": 498.3149026500046,
+      "p99": 905.0289841800002,
+      "ttfbP50": 166.6381429999892,
+      "mbpsP50": 5.2496063337193695
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 154.1709919999994,
+      "p95": 235.0913146000028,
+      "p99": 356.11121882000765
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 1234.8937334999937,
+      "p95": 1669.4482459999997,
+      "p99": 2151.5284769300006,
+      "mbpsP50": 8.491224560902717
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "head",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 125.439286000008,
+      "p95": 231.97390934999416,
+      "p99": 392.977584130002
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "download",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 447.54873399999633,
+      "p95": 1285.0612136500079,
+      "p99": 1835.6724108000037,
+      "ttfbP50": 164.63161050000053,
+      "mbpsP50": 23.429314404004295
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 407.89941699999326,
+      "p95": 1348.2486489499977,
+      "p99": 2704.1612355499747,
+      "ttfbP50": 176.75905449999846,
+      "mbpsP50": 25.706729558773
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 166.70772350000334,
+      "p95": 269.5516699999846,
+      "p99": 512.0339524400088
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 4212.457122000022,
+      "p95": 4863.825309499986,
+      "p99": 5413.715034010008,
+      "mbpsP50": 24.892265241673236
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 121.28549249999924,
+      "p95": 162.91265020002317,
+      "p99": 186.23067246999796
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 2880.259692499996,
+      "p95": 6092.898167350015,
+      "p99": 6302.206970959997,
+      "ttfbP50": 181.94618949999858,
+      "mbpsP50": 36.40560615872319
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 5485.854694500013,
+      "p95": 6872.12960069998,
+      "p99": 7316.633112779986,
+      "ttfbP50": 219.60547049998422,
+      "mbpsP50": 19.114177432575406
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 179.30180150001252,
+      "p95": 459.95560685000527,
+      "p99": 776.4124603100038
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "concurrent-upload",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 490.6338274999871,
+      "p95": 913.2838782500327,
+      "p99": 1033.6282223499886,
+      "mbpsP50": 3.339353929891928
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "concurrent-download",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 328.7996120000025,
+      "p95": 719.747977300008,
+      "p99": 889.5158208400146,
+      "mbpsP50": 4.9829742499817415
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "burst-upload",
+      "size": "32x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 635.571131500008,
+      "p95": 1054.9867544999984,
+      "p99": 1265.7342737499998,
+      "mbpsP50": 5.1556778424886005
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "first-request",
+      "size": "1KB",
+      "n": 60,
+      "failures": 0,
+      "p50": 160.951530499995,
+      "p95": 352.26132739996814,
+      "p99": 763.9208198499776
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "signed-upload",
+      "size": "1MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 413.2757430000056,
+      "p95": 878.8083359999697,
+      "p99": 981.3005243599795
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "range-get",
+      "size": "256KB of 10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 170.871730999992,
+      "p95": 479.32419975002995,
+      "p99": 898.1748620899875,
+      "ttfbP50": 153.7872624999727
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "copy",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 357.0921045000141,
+      "p95": 470.97238165001613,
+      "p99": 499.76504979997696
+    },
+    {
+      "client": "fly-ams",
+      "provider": "supabase",
+      "op": "list-all",
+      "size": "1000 objects",
+      "n": 18,
+      "failures": 0,
+      "p50": 221.7582565000048,
+      "p95": null,
+      "p99": null
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 174.20636550000017,
+      "p95": 296.59496475,
+      "p99": 789.2340726100003,
+      "mbpsP50": 0.005878086010582655
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 100.42965849999928,
+      "p95": 167.3458102999939,
+      "p99": 686.1653867499996
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 131.0865449999992,
+      "p95": 234.7510601999991,
+      "p99": 717.3547793299991,
+      "ttfbP50": 130.93769999999813,
+      "mbpsP50": 0.007811633146636111
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 138.50110550000045,
+      "p95": 296.75666894999415,
+      "p99": 643.7347372300009,
+      "ttfbP50": 138.37677500000063,
+      "mbpsP50": 0.007393442790967446
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 136.87806899999669,
+      "p95": 247.77001274999807,
+      "p99": 393.3841582199999
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 278.5947474999957,
+      "p95": 512.6483322999992,
+      "p99": 670.3862509400029,
+      "mbpsP50": 0.36755897560488493
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 99.83014299999923,
+      "p95": 143.45889769998968,
+      "p99": 427.7340072799998
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 133.6307769999985,
+      "p95": 311.176435949993,
+      "p99": 612.7440777399976,
+      "ttfbP50": 131.65212449999672,
+      "mbpsP50": 0.76629053799486
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 140.2007569999987,
+      "p95": 493.17159914999604,
+      "p99": 729.6437681499973,
+      "ttfbP50": 139.01549100000193,
+      "mbpsP50": 0.7303812204095371
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 137.3911195000037,
+      "p95": 260.37731115000673,
+      "p99": 429.32953348999877
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 346.02396900000167,
+      "p95": 635.1610252999837,
+      "p99": 1223.063480109994,
+      "mbpsP50": 3.030356547352345
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 100.08164399999805,
+      "p95": 235.17995120000478,
+      "p99": 858.0463382699999
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 144.28234050000174,
+      "p95": 326.604012449995,
+      "p99": 421.5405375399965,
+      "ttfbP50": 132.02870049999183,
+      "mbpsP50": 7.267528350082367
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 153.76239350000105,
+      "p95": 303.76908205,
+      "p99": 521.4977271500095,
+      "ttfbP50": 139.6064920000208,
+      "mbpsP50": 6.819456800404143
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 135.9998229999983,
+      "p95": 352.3251620499981,
+      "p99": 642.8911104300003
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 1198.349179500001,
+      "p95": 1613.1641515500153,
+      "p99": 1955.725941169999,
+      "mbpsP50": 8.750170801114145
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "head",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 102.2733600000065,
+      "p95": 261.33753229999706,
+      "p99": 497.37261080002423
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "download",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 298.445063999985,
+      "p95": 752.8792473000034,
+      "p99": 1337.988982500008,
+      "ttfbP50": 133.99431700000423,
+      "mbpsP50": 35.13464039063661
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 320.570968,
+      "p95": 763.8767335499899,
+      "p99": 1014.8780189000087,
+      "ttfbP50": 152.27432750001026,
+      "mbpsP50": 32.70963701241967
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 142.08816299999307,
+      "p95": 358.4050781000042,
+      "p99": 1159.3371575499996
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 3989.9812339999917,
+      "p95": 5017.293876550001,
+      "p99": 5130.008003229991,
+      "mbpsP50": 26.28022385330352
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 103.26266649999889,
+      "p95": 278.47954520002077,
+      "p99": 325.34826032000217
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 2644.5901864999905,
+      "p95": 5767.488397300016,
+      "p99": 5849.860663880014,
+      "ttfbP50": 138.4174459999922,
+      "mbpsP50": 39.64984840950909
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 5599.974012000021,
+      "p95": 6418.48489025001,
+      "p99": 8814.778909290008,
+      "ttfbP50": 212.60716250000405,
+      "mbpsP50": 18.72465832436074
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 161.1475849999988,
+      "p95": 334.5867904499915,
+      "p99": 699.5661313499968
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "concurrent-upload",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 505.4480864999932,
+      "p95": 918.7496464500058,
+      "p99": 938.462367220007,
+      "mbpsP50": 3.24148027019986
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "concurrent-download",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 279.8913590000011,
+      "p95": 616.7197106999951,
+      "p99": 943.316307929978,
+      "mbpsP50": 5.853699827867832
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "burst-upload",
+      "size": "32x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 653.1693999999843,
+      "p95": 1510.4616395999903,
+      "p99": 1685.578538339995,
+      "mbpsP50": 5.016769003569485
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "first-request",
+      "size": "1KB",
+      "n": 60,
+      "failures": 0,
+      "p50": 135.77038899998297,
+      "p95": 225.47839580001886,
+      "p99": 301.5954654099792
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "signed-upload",
+      "size": "1MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 357.53033350000624,
+      "p95": 824.2435792499773,
+      "p99": 972.9277966999845
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "range-get",
+      "size": "256KB of 10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 146.96543800001382,
+      "p95": 473.7487494000083,
+      "p99": 1052.3973880599976,
+      "ttfbP50": 141.93756799999392
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "copy",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 376.21632350000436,
+      "p95": 688.2251392499659,
+      "p99": 1239.2770848100133
+    },
+    {
+      "client": "fly-cdg",
+      "provider": "supabase",
+      "op": "list-all",
+      "size": "1000 objects",
+      "n": 18,
+      "failures": 0,
+      "p50": 177.37375850000535,
+      "p95": null,
+      "p99": null
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 107.6192600000013,
+      "p95": 358.8299538999994,
+      "p99": 626.086262160001,
+      "mbpsP50": 0.00951502547034785
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 24.82030599999962,
+      "p95": 70.60473779999779,
+      "p99": 381.62173878000056
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 53.52017949999936,
+      "p95": 186.98339969999952,
+      "p99": 451.0762370299998,
+      "ttfbP50": 53.41049799999928,
+      "mbpsP50": 0.01913297020986285
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 57.63698999999997,
+      "p95": 143.155634750001,
+      "p99": 252.5339654000003,
+      "ttfbP50": 57.53901549999955,
+      "mbpsP50": 0.01776636843804648
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 61.744494000000486,
+      "p95": 152.21966224999855,
+      "p99": 274.320915310003
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 121.12152150000293,
+      "p95": 443.03873460000375,
+      "p99": 1355.8529839300002,
+      "mbpsP50": 0.8454319160777511
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 23.772086999999374,
+      "p95": 82.09066395000177,
+      "p99": 573.8575096200075
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 57.90254149999964,
+      "p95": 156.06272349999955,
+      "p99": 346.9266191399995,
+      "ttfbP50": 56.284253500003615,
+      "mbpsP50": 1.7684888667624483
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 60.3342079999984,
+      "p95": 189.2637769499938,
+      "p99": 372.3625845999954,
+      "ttfbP50": 58.79060799999934,
+      "mbpsP50": 1.6972129641612719
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 62.358258999996906,
+      "p95": 167.32822660000195,
+      "p99": 595.9601236500049
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 171.13535449999472,
+      "p95": 624.7927955499991,
+      "p99": 1074.3073912599998,
+      "mbpsP50": 6.127173447378065
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 24.232341999999335,
+      "p95": 42.70217964999647,
+      "p99": 88.79157177999964
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 68.62648999999874,
+      "p95": 243.6356786500022,
+      "p99": 999.6636027299985,
+      "ttfbP50": 54.47650050000084,
+      "mbpsP50": 15.279464241869565
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 76.72575450000295,
+      "p95": 318.2576829000025,
+      "p99": 654.2718012299997,
+      "ttfbP50": 62.281699999999546,
+      "mbpsP50": 13.666545305852413
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 60.847986499997205,
+      "p95": 227.92049130000086,
+      "p99": 652.9378684199929
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 490.70275850001053,
+      "p95": 852.5409768500054,
+      "p99": 2215.7391736999934,
+      "mbpsP50": 21.368862959020387
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "head",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 28.0823889999956,
+      "p95": 215.76115855000094,
+      "p99": 459.1648360099906
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "download",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 187.6648750000022,
+      "p95": 544.4217648500045,
+      "p99": 662.8627742699894,
+      "ttfbP50": 64.40781250000146,
+      "mbpsP50": 55.87492065310505
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 187.75195299999905,
+      "p95": 415.3627892500014,
+      "p99": 548.4591694000044,
+      "ttfbP50": 67.65081150000333,
+      "mbpsP50": 55.84900626839314
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 65.45928200000344,
+      "p95": 226.40928664999072,
+      "p99": 421.2510674899952
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 2079.8733734999987,
+      "p95": 3475.1377072499977,
+      "p99": 3822.809218309996,
+      "mbpsP50": 50.41537688592371
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 31.870703000000503,
+      "p95": 57.04615784999914,
+      "p99": 61.04424692999295
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 1984.8041735000152,
+      "p95": 3068.52379615001,
+      "p99": 3419.9300326399953,
+      "ttfbP50": 67.89388649999455,
+      "mbpsP50": 52.83019927104118
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 1901.8551720000105,
+      "p95": 3259.16294865,
+      "p99": 3841.026874840006,
+      "ttfbP50": 96.543508499999,
+      "mbpsP50": 55.134376972422494
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 82.58991800000513,
+      "p95": 248.76117250000084,
+      "p99": 273.3427120499978
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "concurrent-upload",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 299.3254200000083,
+      "p95": 1041.0597665999985,
+      "p99": 1170.8277207500014,
+      "mbpsP50": 5.473641363302705
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "concurrent-download",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 185.95330100000137,
+      "p95": 461.9427361499998,
+      "p99": 781.2976634299991,
+      "mbpsP50": 8.810814280731634
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "burst-upload",
+      "size": "32x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 410.6296995000157,
+      "p95": 1063.7852205500092,
+      "p99": 1787.9214522200066,
+      "mbpsP50": 7.979939113000945
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "first-request",
+      "size": "1KB",
+      "n": 60,
+      "failures": 0,
+      "p50": 45.55719149998913,
+      "p95": 77.879035749998,
+      "p99": 108.74251405999877
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "signed-upload",
+      "size": "1MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 201.69043650000822,
+      "p95": 511.9804782000061,
+      "p99": 805.0927102300029
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "range-get",
+      "size": "256KB of 10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 64.68409249998513,
+      "p95": 103.56314459999687,
+      "p99": 322.2711016300061,
+      "ttfbP50": 56.25697050002054
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "copy",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 290.27667950000614,
+      "p95": 441.0606783999854,
+      "p99": 654.6758890400116
+    },
+    {
+      "client": "fly-iad",
+      "provider": "supabase",
+      "op": "list-all",
+      "size": "1000 objects",
+      "n": 18,
+      "failures": 0,
+      "p50": 89.70024649999687,
+      "p95": null,
+      "p99": null
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 169.6906280000003,
+      "p95": 332.31205850000055,
+      "p99": 547.7058672700036,
+      "mbpsP50": 0.00603451122828067
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 94.07021200000008,
+      "p95": 202.13379054999973,
+      "p99": 564.6026354100031
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 122.44746749999649,
+      "p95": 209.85931250000013,
+      "p99": 514.9733172200021,
+      "ttfbP50": 122.39254749999964,
+      "mbpsP50": 0.008362769936422158
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 140.87049700000352,
+      "p95": 244.307860000004,
+      "p99": 393.65712882999816,
+      "ttfbP50": 140.78877700000157,
+      "mbpsP50": 0.007269087721043351
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 131.6681424999988,
+      "p95": 215.03699355000032,
+      "p99": 555.4787059599983
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 275.2833000000028,
+      "p95": 511.02201250000206,
+      "p99": 584.7220947199957,
+      "mbpsP50": 0.3719804288890716
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 101.58566699999938,
+      "p95": 200.12204449999606,
+      "p99": 459.3508123899995
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 137.86689699999988,
+      "p95": 275.24515600000154,
+      "p99": 382.89524832999734,
+      "ttfbP50": 135.6160219999947,
+      "mbpsP50": 0.7427453741850742
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 142.3368929999997,
+      "p95": 462.2525879999957,
+      "p99": 583.5847448200009,
+      "ttfbP50": 140.70570299999963,
+      "mbpsP50": 0.7194199468721032
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100KB",
+      "n": 180,
+      "failures": 0,
+      "p50": 139.318282500004,
+      "p95": 393.10480704999713,
+      "p99": 735.8402691000018
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 340.8968109999987,
+      "p95": 599.3050504999926,
+      "p99": 825.6910127200008,
+      "mbpsP50": 3.0759337317473587
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "head",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 99.2678714999929,
+      "p95": 207.35952954999877,
+      "p99": 720.1810002799901
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "download",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 198.31996849999996,
+      "p95": 408.21524350000465,
+      "p99": 552.605275120001,
+      "ttfbP50": 130.936827000005,
+      "mbpsP50": 5.287294103215835
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 167.38190800000302,
+      "p95": 376.80679799999416,
+      "p99": 699.203720310008,
+      "ttfbP50": 147.0575624999983,
+      "mbpsP50": 6.264571915382761
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "1MB",
+      "n": 90,
+      "failures": 0,
+      "p50": 135.00321750000148,
+      "p95": 209.2462444999997,
+      "p99": 448.92278245000097
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 893.0142610000039,
+      "p95": 1647.6580461499905,
+      "p99": 1906.8101233199975,
+      "mbpsP50": 11.741984935669414
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "head",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 102.94075150000572,
+      "p95": 132.87400794999266,
+      "p99": 416.63552070999765
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "download",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 312.2052799999947,
+      "p95": 732.034477849986,
+      "p99": 1292.649637869986,
+      "ttfbP50": 136.21285799999896,
+      "mbpsP50": 33.586107192037815
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 299.3257104999939,
+      "p95": 751.5199051500119,
+      "p99": 1327.8088095399958,
+      "ttfbP50": 145.3885930000106,
+      "mbpsP50": 35.031270726743045
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 141.4026920000033,
+      "p95": 298.71258520001965,
+      "p99": 697.9823651299921
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "upload",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 3399.679806,
+      "p95": 3917.995547049996,
+      "p99": 4212.236603090004,
+      "mbpsP50": 30.843375254028263
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "head",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 101.76150200000848,
+      "p95": 130.86648034999817,
+      "p99": 134.27172670000087
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "download",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 2426.655562499989,
+      "p95": 5909.385097399985,
+      "p99": 6219.627879090005,
+      "ttfbP50": 147.44751250000263,
+      "mbpsP50": 43.210747178299016
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "url-get",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 4562.423551500004,
+      "p95": 5682.836548849987,
+      "p99": 5912.090461549988,
+      "ttfbP50": 177.09928800001217,
+      "mbpsP50": 22.982872768470962
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "delete",
+      "size": "100MB",
+      "n": 24,
+      "failures": 0,
+      "p50": 151.11017250001896,
+      "p95": 350.00496749999866,
+      "p99": 836.6035789399994
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "concurrent-upload",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 551.4951290000172,
+      "p95": 1262.5061885999933,
+      "p99": 1510.8397530500015,
+      "mbpsP50": 2.970833129516089
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "concurrent-download",
+      "size": "16x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 269.56652999998187,
+      "p95": 729.6700000999899,
+      "p99": 1116.7612607899962,
+      "mbpsP50": 6.07790588839093
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "burst-upload",
+      "size": "32x100KB",
+      "n": 30,
+      "failures": 0,
+      "p50": 599.3565959999978,
+      "p95": 1977.946937999992,
+      "p99": 3714.419127269979,
+      "mbpsP50": 5.4671960263202175
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "first-request",
+      "size": "1KB",
+      "n": 60,
+      "failures": 0,
+      "p50": 125.41119199999957,
+      "p95": 186.0041990499798,
+      "p99": 399.8885828799575
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "signed-upload",
+      "size": "1MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 372.43941600000835,
+      "p95": 766.5462476000073,
+      "p99": 819.3201751000076
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "range-get",
+      "size": "256KB of 10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 177.53839800000424,
+      "p95": 407.06540945001467,
+      "p99": 715.8833652300043,
+      "ttfbP50": 134.44940199996927
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "copy",
+      "size": "10MB",
+      "n": 60,
+      "failures": 0,
+      "p50": 352.82699599998887,
+      "p95": 475.9602433999563,
+      "p99": 988.5638851900152
+    },
+    {
+      "client": "fly-sjc",
+      "provider": "supabase",
+      "op": "list-all",
+      "size": "1000 objects",
+      "n": 18,
+      "failures": 0,
+      "p50": 148.6722379999992,
+      "p95": null,
+      "p99": null
+    }
+  ],
+  "errors": {}
+}

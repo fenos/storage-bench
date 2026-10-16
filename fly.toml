@@ -1,0 +1,21 @@
+# Fly.io bench runner, one machine per client region. See docs/FLY.md.
+# App names are global on Fly: change this if it is taken.
+app = "supabase-storage-bench"
+# Ashburn, the same metro as the main upstream client (railway-ashburn) and the US East buckets.
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+# No [http_service]: the machine serves nothing, so Fly never auto-stops it mid-run.
+
+# Raw samples land here and survive a machine restart. Each machine gets its own volume in its region.
+[mounts]
+  source = "bench_results"
+  destination = "/app/results"
+  initial_size = "1gb"
+
+# A dedicated CPU, so hashing and filling 100 MB bodies never hit shared-CPU throttling mid-measurement.
+[[vm]]
+  size = "performance-1x"
+  memory = "2gb"

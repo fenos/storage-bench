@@ -2137,6 +2137,17 @@
           161.5,
           5180
         ]
+      },
+      {
+        "id": "supabase",
+        "label": "Supabase Storage",
+        "model": "$25/month Pro plan (its $10 compute credit covers the Micro instance), 100 GB stored then $0.0213/GB-month, 250 GB uncached egress then $0.09/GB, no per-request charges listed. Egress is priced at the uncached rate; egress served from the Smart CDN cache is $0.03/GB",
+        "source": "https://supabase.com/pricing, https://supabase.com/docs/guides/storage/pricing and https://supabase.com/docs/guides/platform/manage-your-usage/egress (checked 2026-10-16)",
+        "monthly": [
+          25,
+          191.01999999999998,
+          4713.37
+        ]
       }
     ]
   },
