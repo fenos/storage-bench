@@ -1,0 +1,11 @@
+# Credentials reach the machine as Fly secrets, never through the image.
+.env*
+.git
+.github
+.vercel
+node_modules
+results
+logs
+site
+docs
+scripts

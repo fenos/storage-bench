@@ -39,6 +39,6 @@ npm run bench -- --profile full --client my-laptop
 npm run report
 ```
 
-`--profile smoke` runs a quick check, and `--providers r2,railway` limits the run.
+`--profile smoke` runs a quick check, and `--providers r2,railway` limits the run. To run from Fly.io machines in one or more regions, see [docs/FLY.md](docs/FLY.md).
 
 <p align="center"><sub>Built by <a href="https://x.com/leodev">@leodev</a></sub></p>

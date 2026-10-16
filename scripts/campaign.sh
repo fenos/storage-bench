@@ -14,7 +14,8 @@ passes=${1:?passes}
 shift
 locations=("$@")
 version=$(git rev-parse --short HEAD)
-providers=aws-s3,r2,railway,b2,neon
+# Providers without credentials at a location are skipped there. Set PROVIDERS to override the list.
+providers=${PROVIDERS:-aws-s3,r2,railway,b2,neon,supabase}
 mkdir -p logs/campaign
 
 say() { echo "[$(date -u +%H:%M:%S)] $*" | tee -a logs/campaign/campaign.log; }
