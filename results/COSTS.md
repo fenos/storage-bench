@@ -11,6 +11,7 @@ Workloads are in GB of 10^9 bytes. AWS documents S3 storage in binary GB (2^30 b
 | Railway Buckets | $0.00 | $7.50 | $150 |
 | Backblaze B2 | $0.20 | $8.41 | $269 |
 | Neon (Launch plan) | $0.23 | $162 | $5,180 |
+| Supabase Storage (Pro plan) | $25.00 | $191 | $4,713 |
 
 - **Side project:** 10 GB stored, 50 GB served, 100k uploads, 1M reads.
 - **SaaS with user uploads:** 500 GB stored, 2 TB served, 5M uploads, 50M reads.
@@ -23,3 +24,4 @@ Workloads are in GB of 10^9 bytes. AWS documents S3 storage in binary GB (2^30 b
 - **Railway Buckets:** $0.015/GB-month, requests and egress free. The Free plan covers up to 10 GB-month with its $1 monthly credit; Hobby ($5/month, counted toward usage) caps storage at 1 TB; Pro ($20/month, counted toward usage) has no cap. Source: https://docs.railway.com/storage-buckets/billing
 - **Backblaze B2:** $6.95/TB-month after 10 GB free, class A/B/C requests free, egress free up to 3x stored then $0.01/GB. Source: https://www.backblaze.com/cloud-storage/pricing
 - **Neon (Launch plan):** $0.023/GB-month, requests free, 500 GB/month egress per project then $0.10/GB (shared with Postgres traffic). Source: https://neon.com/pricing
+- **Supabase Storage (Pro plan):** $25/month Pro plan (its $10 compute credit covers the Micro instance), 100 GB stored then $0.0213/GB-month, 250 GB uncached egress then $0.09/GB, no per-request charges listed. Egress is priced at the uncached rate; egress served from the Smart CDN cache is $0.03/GB. Source: https://supabase.com/pricing, https://supabase.com/docs/guides/storage/pricing and https://supabase.com/docs/guides/platform/manage-your-usage/egress (checked 2026-10-16)
