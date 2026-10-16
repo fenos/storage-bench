@@ -179,7 +179,7 @@
         3.06
       ],
       "note": "A boat sandbox on OVH in Lille, France. Every bucket is across the Atlantic.",
-      "runs": 2
+      "runs": 3
     }
   ],
   "data": {
@@ -216,10 +216,10 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 740.2163054999546,
-          "p95": 1686.410910700081,
-          "n": 60,
-          "failRate": 0
+          "value": 1058.8027089999523,
+          "p95": 1816.8260668000437,
+          "n": 90,
+          "failRate": 0.011111111111111112
         }
       },
       "r2": {
@@ -254,9 +254,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 555.2704125000164,
-          "p95": 1290.6288205000217,
-          "n": 60,
+          "value": 715.2845314999577,
+          "p95": 1546.9755040000134,
+          "n": 90,
           "failRate": 0
         }
       },
@@ -292,9 +292,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 512.5797700000112,
-          "p95": 1046.1308119999592,
-          "n": 60,
+          "value": 555.1086795000592,
+          "p95": 1442.914981949958,
+          "n": 90,
           "failRate": 0
         }
       },
@@ -330,10 +330,10 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 839.9276539999992,
-          "p95": 1783.677147100004,
-          "n": 60,
-          "failRate": 0.016666666666666666
+          "value": 894.785886000027,
+          "p95": 1939.0325745999812,
+          "n": 90,
+          "failRate": 0.011111111111111112
         }
       },
       "neon": {
@@ -368,9 +368,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 867.0024565000203,
-          "p95": 1580.2544985999875,
-          "n": 60,
+          "value": 1100.2588409999735,
+          "p95": 6393.837155399991,
+          "n": 90,
           "failRate": 0
         }
       }
@@ -408,9 +408,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 303.34514099999797,
+          "value": 309.45867400002317,
           "p95": null,
-          "n": 97,
+          "n": 157,
           "failRate": 0
         }
       },
@@ -446,9 +446,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 193.91219699999783,
+          "value": 197.97775099999853,
           "p95": null,
-          "n": 96,
+          "n": 156,
           "failRate": 0
         }
       },
@@ -484,9 +484,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 176.4432079999824,
+          "value": 198.31666100001894,
           "p95": null,
-          "n": 97,
+          "n": 157,
           "failRate": 0
         }
       },
@@ -522,9 +522,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 280.3367225000002,
+          "value": 282.50621899999896,
           "p95": null,
-          "n": 96,
+          "n": 155,
           "failRate": 0
         }
       },
@@ -560,9 +560,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 370.000778000016,
+          "value": 371.7925419999956,
           "p95": null,
-          "n": 97,
+          "n": 157,
           "failRate": 0
         }
       }
@@ -600,9 +600,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 920.0781265000114,
-          "p95": 1898.580343000077,
-          "n": 60,
+          "value": 878.531071000034,
+          "p95": 1656.0638752000161,
+          "n": 89,
           "failRate": 0
         }
       },
@@ -638,9 +638,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 336.568385999999,
-          "p95": 599.4619463500392,
-          "n": 60,
+          "value": 333.758480999968,
+          "p95": 615.1588997000129,
+          "n": 90,
           "failRate": 0
         }
       },
@@ -676,9 +676,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 436.5245335000218,
-          "p95": 723.2161718999499,
-          "n": 60,
+          "value": 436.4047310000169,
+          "p95": 797.4375933000119,
+          "n": 90,
           "failRate": 0
         }
       },
@@ -714,9 +714,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 811.1856499999994,
-          "p95": 902.2319202999698,
-          "n": 59,
+          "value": 818.5941299999831,
+          "p95": 925.242686200002,
+          "n": 89,
           "failRate": 0
         }
       },
@@ -752,9 +752,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 980.2487989999936,
-          "p95": 1930.082011000067,
-          "n": 60,
+          "value": 954.0109800000209,
+          "p95": 1910.4447826499875,
+          "n": 90,
           "failRate": 0
         }
       }
@@ -792,9 +792,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 13.328514152949046,
+          "value": 12.822067785077435,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -830,10 +830,10 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 21.39907667625627,
+          "value": 20.86744203025402,
           "p95": null,
-          "n": 16,
-          "failRate": 0
+          "n": 24,
+          "failRate": 0.041666666666666664
         }
       },
       "railway": {
@@ -868,9 +868,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 12.908882377005582,
+          "value": 12.185621585376964,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -906,9 +906,9 @@
           "failRate": 0.041666666666666664
         },
         "boat-lille": {
-          "value": 11.77530865225279,
+          "value": 10.945468278726592,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -944,9 +944,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 12.726277609018473,
+          "value": 12.596587882427276,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       }
@@ -984,9 +984,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 3.023295665136692,
+          "value": 3.787759223928199,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -1022,9 +1022,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 24.940514829820227,
+          "value": 27.0951246211195,
           "p95": null,
-          "n": 16,
+          "n": 23,
           "failRate": 0
         }
       },
@@ -1060,9 +1060,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 19.941744176437865,
+          "value": 23.801688764428825,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -1098,9 +1098,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 18.647117590508447,
+          "value": 18.861618203421294,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       },
@@ -1136,9 +1136,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 3.7373035198313134,
+          "value": 3.8996583356234438,
           "p95": null,
-          "n": 16,
+          "n": 24,
           "failRate": 0
         }
       }
@@ -1176,9 +1176,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 308.96610099985264,
-          "p95": 323.77002805010414,
-          "n": 40,
+          "value": 309.3164024997968,
+          "p95": 325.8015769001562,
+          "n": 60,
           "failRate": 0
         }
       },
@@ -1214,9 +1214,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 169.5717739998363,
-          "p95": 262.35880735004315,
-          "n": 40,
+          "value": 165.82611000002362,
+          "p95": 248.51792730018494,
+          "n": 60,
           "failRate": 0
         }
       },
@@ -1252,9 +1252,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 142.42118200007826,
-          "p95": 268.36600584983796,
-          "n": 40,
+          "value": 219.22308199992403,
+          "p95": 292.5548972998278,
+          "n": 60,
           "failRate": 0
         }
       },
@@ -1290,9 +1290,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 282.87778800027445,
-          "p95": 314.66603250016925,
-          "n": 40,
+          "value": 283.7017520000227,
+          "p95": 314.8811520999763,
+          "n": 60,
           "failRate": 0
         }
       },
@@ -1328,9 +1328,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 348.17440599994734,
-          "p95": 405.1097820500843,
-          "n": 40,
+          "value": 347.4185615000315,
+          "p95": 386.06578764955043,
+          "n": 60,
           "failRate": 0
         }
       }
@@ -1368,9 +1368,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 441.73142050020397,
-          "p95": 648.6941704500234,
-          "n": 20,
+          "value": 436.4218380001839,
+          "p95": 640.7338876998284,
+          "n": 30,
           "failRate": 0
         }
       },
@@ -1406,9 +1406,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 788.9590674997307,
-          "p95": 1050.1299283501944,
-          "n": 20,
+          "value": 795.9088794996496,
+          "p95": 976.47521670009,
+          "n": 30,
           "failRate": 0
         }
       },
@@ -1444,9 +1444,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 390.6789829998743,
-          "p95": 552.5006449502662,
-          "n": 20,
+          "value": 391.1963495002128,
+          "p95": 661.9476994999684,
+          "n": 30,
           "failRate": 0
         }
       },
@@ -1482,10 +1482,10 @@
           "failRate": 0.06666666666666667
         },
         "boat-lille": {
-          "value": 1117.2783049996942,
-          "p95": null,
-          "n": 20,
-          "failRate": 0.05
+          "value": 1127.2107014998328,
+          "p95": 1743.0221755999373,
+          "n": 30,
+          "failRate": 0.06666666666666667
         }
       },
       "neon": {
@@ -1520,9 +1520,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 442.32175200013444,
-          "p95": 770.4623067503795,
-          "n": 20,
+          "value": 442.73389600007795,
+          "p95": 740.8875505500937,
+          "n": 30,
           "failRate": 0
         }
       }
@@ -1560,9 +1560,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 173.54433549987152,
+          "value": 164.6187415001914,
           "p95": null,
-          "n": 12,
+          "n": 18,
           "failRate": 0
         }
       },
@@ -1598,9 +1598,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 844.0718115000054,
+          "value": 796.4443359998986,
           "p95": null,
-          "n": 12,
+          "n": 18,
           "failRate": 0
         }
       },
@@ -1636,9 +1636,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 211.0544079998508,
+          "value": 180.33504249993712,
           "p95": null,
-          "n": 12,
+          "n": 18,
           "failRate": 0
         }
       },
@@ -1674,9 +1674,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 731.5558434999548,
+          "value": 297.86667000036687,
           "p95": null,
-          "n": 12,
+          "n": 18,
           "failRate": 0
         }
       },
@@ -1712,9 +1712,9 @@
           "failRate": 0
         },
         "boat-lille": {
-          "value": 274.56826800014824,
+          "value": 203.1762380003929,
           "p95": null,
-          "n": 12,
+          "n": 18,
           "failRate": 0
         }
       }
@@ -1743,8 +1743,8 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 1877,
-        "failures": 0
+        "samples": 2869,
+        "failures": 1
       }
     },
     "r2": {
@@ -1769,8 +1769,8 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 1872,
-        "failures": 0
+        "samples": 2864,
+        "failures": 1
       }
     },
     "railway": {
@@ -1795,7 +1795,7 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 1877,
+        "samples": 2873,
         "failures": 0
       }
     },
@@ -1821,8 +1821,8 @@
         "failures": 10
       },
       "boat-lille": {
-        "samples": 1863,
-        "failures": 4
+        "samples": 2846,
+        "failures": 8
       }
     },
     "neon": {
@@ -1847,7 +1847,7 @@
         "failures": 1
       },
       "boat-lille": {
-        "samples": 1877,
+        "samples": 2873,
         "failures": 0
       }
     }
@@ -1875,8 +1875,8 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 413,
-        "failures": 0
+        "samples": 631,
+        "failures": 1
       }
     },
     "r2": {
@@ -1901,8 +1901,8 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 412,
-        "failures": 0
+        "samples": 630,
+        "failures": 1
       }
     },
     "railway": {
@@ -1927,7 +1927,7 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 413,
+        "samples": 631,
         "failures": 0
       }
     },
@@ -1953,8 +1953,8 @@
         "failures": 10
       },
       "boat-lille": {
-        "samples": 412,
-        "failures": 6
+        "samples": 630,
+        "failures": 11
       }
     },
     "neon": {
@@ -1979,8 +1979,8 @@
         "failures": 0
       },
       "boat-lille": {
-        "samples": 413,
-        "failures": 1
+        "samples": 631,
+        "failures": 3
       }
     }
   },
@@ -1988,7 +1988,7 @@
     {
       "provider": "b2",
       "message": "FilesError: socket hang up",
-      "count": 42
+      "count": 47
     },
     {
       "provider": "b2",
@@ -2006,8 +2006,18 @@
       "count": 2
     },
     {
+      "provider": "r2",
+      "message": "FilesError: read ECONNRESET",
+      "count": 2
+    },
+    {
       "provider": "neon",
       "message": "FilesError: Please reduce your request rate.",
+      "count": 2
+    },
+    {
+      "provider": "neon",
+      "message": "FilesError: We encountered an internal error. Please try again.",
       "count": 2
     },
     {
@@ -2023,11 +2033,6 @@
     {
       "provider": "neon",
       "message": "TypeError: fetch failed",
-      "count": 1
-    },
-    {
-      "provider": "r2",
-      "message": "FilesError: read ECONNRESET",
       "count": 1
     },
     {
@@ -2054,6 +2059,11 @@
       "provider": "aws-s3",
       "message": "seed failed: setup: FilesError: getaddrinfo EAI_AGAIN storage-bench-638432620713-us-east-2.s3.us-east-2.amazonaws.com",
       "count": 1
+    },
+    {
+      "provider": "aws-s3",
+      "message": "FilesError: socket hang up",
+      "count": 1
     }
   ],
   "costs": {
@@ -2079,9 +2089,9 @@
         "model": "$0.023/GB-month, $0.005 per 1k writes, $0.0004 per 1k reads, egress $0.09/GB after 100 GB/month free (then $0.085, $0.07 tiers)",
         "source": "https://aws.amazon.com/s3/pricing/ (storage, requests, and data transfer tabs, US East (Ohio)); same values in the AWS Price List API, AmazonS3 and AWSDataTransfer offers",
         "monthly": [
-          1.13,
-          227.5,
-          4821.5
+          1.11420419216156,
+          226.710209608078,
+          4806.904192161561
         ]
       },
       {
@@ -2134,5 +2144,5 @@
     "2026-10-09",
     "2026-10-15"
   ],
-  "runs": 17
+  "runs": 18
 }

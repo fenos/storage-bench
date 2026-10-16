@@ -17,6 +17,7 @@
 - **freestyle-sf** (California, AS36320 Freestyle Cloud, Inc.), run 2026-10-15T22-05-48-908Z-freestyle-sf, Node v24.21.0, files-sdk 3.0.0
 - **ms-a2** (Florida, AS7018 AT&T Enterprises, LLC), run 2026-10-15T22-10-46-755Z-ms-a2, Node v24.20.0, files-sdk 3.0.0
 - **tenki-seattle** (Washington, AS19538 Luxor), run 2026-10-15T22-35-38-317Z-tenki-seattle, Node v24.14.0, files-sdk 3.0.0
+- **boat-lille** (Hauts-de-France, AS16276 OVH SAS), run 2026-10-15T23-31-52-136Z-boat-lille, Node v24.18.1, files-sdk 3.0.0
 - Excluded 0 samples from **tenki-seattle** between 2026-10-09T20:39:00.396Z and 2026-10-09T21:06:51.638Z: Tenki paused the sandbox twice when it hit its default maximum run time. Any sample whose request overlaps the pause is dropped. The sandbox was made sticky afterwards.
 - Excluded 581 samples from **boat-lille** between 2026-10-15T20:13:59.000Z and 2026-10-15T20:15:53.000Z: A campaign restart briefly started a second run on the same machine. The duplicate was stopped and its data deleted; samples from the surviving run during the overlap are dropped.
 - Excluded 303 samples from **freestyle-sf** between 2026-10-15T22:05:48.000Z and 2026-10-15T22:06:35.000Z: A campaign restart briefly started a second run on the same machine. The duplicate was stopped and its data deleted; samples from the surviving run during the overlap are dropped.
@@ -875,185 +876,187 @@
 
 | Provider | Op | Size | p50 | p95 | p99 | TTFB p50 | MB/s p50 | n | fail % |
 |---|---|---|---|---|---|---|---|---|---|
-| railway | burst-upload | 32x100KB | 405 ms | 576 ms | 659 ms | – | 8.1 | 20 | 0.0 |
-| aws-s3 | burst-upload | 32x100KB | 447 ms | 700 ms | 758 ms | – | 7.3 | 20 | 0.0 |
-| neon | burst-upload | 32x100KB | 493 ms | – | – | – | 6.7 | 20 | 5.0 |
-| r2 | burst-upload | 32x100KB | 828 ms | 1.75 s | 2.91 s | – | 4.0 | 20 | 0.0 |
-| b2 | burst-upload | 32x100KB | 1.21 s | – | – | – | 2.7 | 20 | 10.0 |
-| b2 | concurrent-download | 16x100KB | 337 ms | – | – | – | 4.9 | 19 | 0.0 |
-| railway | concurrent-download | 16x100KB | 381 ms | 504 ms | 593 ms | – | 4.3 | 20 | 0.0 |
-| neon | concurrent-download | 16x100KB | 386 ms | 625 ms | 743 ms | – | 4.2 | 20 | 0.0 |
-| r2 | concurrent-download | 16x100KB | 434 ms | 759 ms | 785 ms | – | 3.8 | 20 | 0.0 |
-| aws-s3 | concurrent-download | 16x100KB | 524 ms | 897 ms | 1.06 s | – | 3.1 | 20 | 0.0 |
-| railway | concurrent-upload | 16x100KB | 391 ms | 553 ms | 722 ms | – | 4.2 | 20 | 0.0 |
-| aws-s3 | concurrent-upload | 16x100KB | 442 ms | 649 ms | 665 ms | – | 3.7 | 20 | 0.0 |
-| neon | concurrent-upload | 16x100KB | 442 ms | 770 ms | 802 ms | – | 3.7 | 20 | 0.0 |
-| r2 | concurrent-upload | 16x100KB | 789 ms | 1.05 s | 3.04 s | – | 2.1 | 20 | 0.0 |
-| b2 | concurrent-upload | 16x100KB | 1.12 s | – | – | – | 1.5 | 20 | 5.0 |
-| aws-s3 | copy | 10MB | 246 ms | 282 ms | 299 ms | – | – | 40 | 0.0 |
-| neon | copy | 10MB | 324 ms | 405 ms | 496 ms | – | – | 40 | 0.0 |
-| railway | copy | 10MB | 518 ms | 678 ms | 849 ms | – | – | 40 | 0.0 |
-| b2 | copy | 10MB | 781 ms | 2.93 s | 3.13 s | – | – | 40 | 0.0 |
-| r2 | copy | 10MB | 1.58 s | 2.10 s | 2.17 s | – | – | 40 | 0.0 |
-| b2 | delete | 1KB | 94 ms | 128 ms | 411 ms | – | – | 96 | 0.0 |
-| neon | delete | 1KB | 109 ms | 142 ms | 320 ms | – | – | 97 | 0.0 |
-| aws-s3 | delete | 1KB | 112 ms | 127 ms | 303 ms | – | – | 97 | 0.0 |
-| railway | delete | 1KB | 116 ms | 151 ms | 338 ms | – | – | 97 | 0.0 |
-| r2 | delete | 1KB | 179 ms | 362 ms | 444 ms | – | – | 96 | 0.0 |
-| b2 | delete | 1MB | 98 ms | 107 ms | 111 ms | – | – | 59 | 0.0 |
-| neon | delete | 1MB | 109 ms | 132 ms | 238 ms | – | – | 60 | 0.0 |
-| aws-s3 | delete | 1MB | 111 ms | 120 ms | 127 ms | – | – | 60 | 0.0 |
-| railway | delete | 1MB | 116 ms | 134 ms | 143 ms | – | – | 60 | 0.0 |
-| r2 | delete | 1MB | 176 ms | 291 ms | 435 ms | – | – | 60 | 0.0 |
-| b2 | delete | 10MB | 94 ms | 106 ms | 108 ms | – | – | 40 | 0.0 |
-| aws-s3 | delete | 10MB | 111 ms | 131 ms | 388 ms | – | – | 40 | 0.0 |
-| neon | delete | 10MB | 113 ms | 241 ms | 291 ms | – | – | 40 | 0.0 |
-| railway | delete | 10MB | 116 ms | 221 ms | 245 ms | – | – | 40 | 0.0 |
-| r2 | delete | 10MB | 187 ms | 269 ms | 304 ms | – | – | 40 | 0.0 |
-| b2 | delete | 100KB | 94 ms | 109 ms | 161 ms | – | – | 119 | 0.0 |
-| neon | delete | 100KB | 110 ms | 147 ms | 256 ms | – | – | 120 | 0.0 |
-| railway | delete | 100KB | 115 ms | 136 ms | 158 ms | – | – | 120 | 0.0 |
-| aws-s3 | delete | 100KB | 115 ms | 131 ms | 182 ms | – | – | 120 | 0.0 |
-| r2 | delete | 100KB | 173 ms | 261 ms | 296 ms | – | – | 120 | 0.0 |
-| neon | delete | 100MB | 113 ms | – | – | – | – | 16 | 0.0 |
-| railway | delete | 100MB | 119 ms | – | – | – | – | 16 | 0.0 |
-| r2 | delete | 100MB | 177 ms | – | – | – | – | 16 | 0.0 |
-| b2 | delete | 100MB | 265 ms | – | – | – | – | 16 | 0.0 |
-| aws-s3 | delete | 100MB | 322 ms | – | – | – | – | 16 | 0.0 |
-| b2 | download | 1KB | 100 ms | 155 ms | 358 ms | 100 ms | 0.0 | 96 | 0.0 |
-| railway | download | 1KB | 103 ms | 107 ms | 146 ms | 103 ms | 0.0 | 97 | 0.0 |
-| aws-s3 | download | 1KB | 117 ms | 286 ms | 337 ms | 117 ms | 0.0 | 97 | 0.0 |
-| neon | download | 1KB | 122 ms | 166 ms | 395 ms | 122 ms | 0.0 | 97 | 0.0 |
-| r2 | download | 1KB | 286 ms | 421 ms | 631 ms | 285 ms | 0.0 | 96 | 0.0 |
-| railway | download | 1MB | 331 ms | 717 ms | 2.42 s | 211 ms | 3.2 | 60 | 0.0 |
-| aws-s3 | download | 1MB | 401 ms | 1.62 s | 5.00 s | 118 ms | 2.6 | 60 | 0.0 |
-| r2 | download | 1MB | 443 ms | 714 ms | 758 ms | 291 ms | 2.4 | 60 | 0.0 |
-| b2 | download | 1MB | 608 ms | 719 ms | 1.10 s | 141 ms | 1.7 | 59 | 0.0 |
-| neon | download | 1MB | 812 ms | 2.26 s | 4.03 s | 121 ms | 1.3 | 60 | 0.0 |
-| railway | download | 10MB | 832 ms | 1.30 s | 2.56 s | 234 ms | 12.6 | 40 | 0.0 |
-| r2 | download | 10MB | 843 ms | 1.16 s | 1.34 s | 307 ms | 12.4 | 40 | 0.0 |
-| b2 | download | 10MB | 1.03 s | 1.48 s | 1.96 s | 151 ms | 10.2 | 40 | 0.0 |
-| aws-s3 | download | 10MB | 2.82 s | 14.93 s | 48.96 s | 118 ms | 3.7 | 40 | 0.0 |
-| neon | download | 10MB | 3.40 s | 6.89 s | 21.45 s | 124 ms | 3.1 | 40 | 0.0 |
-| railway | download | 100KB | 216 ms | 378 ms | 462 ms | 201 ms | 0.5 | 120 | 0.0 |
-| aws-s3 | download | 100KB | 219 ms | 721 ms | 1.10 s | 121 ms | 0.5 | 120 | 0.0 |
-| b2 | download | 100KB | 277 ms | 342 ms | 397 ms | 127 ms | 0.4 | 119 | 0.0 |
-| neon | download | 100KB | 280 ms | 533 ms | 744 ms | 121 ms | 0.4 | 120 | 0.0 |
-| r2 | download | 100KB | 281 ms | 450 ms | 518 ms | 277 ms | 0.4 | 120 | 0.0 |
-| b2 | download | 100MB | 4.94 s | – | – | 155 ms | 21.2 | 16 | 0.0 |
-| railway | download | 100MB | 5.44 s | – | – | 236 ms | 19.3 | 16 | 0.0 |
-| r2 | download | 100MB | 5.90 s | – | – | 382 ms | 17.8 | 16 | 0.0 |
-| neon | download | 100MB | 30.14 s | – | – | 123 ms | 3.5 | 16 | 0.0 |
-| aws-s3 | download | 100MB | 31.91 s | – | – | 128 ms | 3.3 | 16 | 0.0 |
-| railway | first-request | 1KB | 142 ms | 268 ms | 366 ms | – | – | 40 | 0.0 |
-| r2 | first-request | 1KB | 170 ms | 262 ms | 288 ms | – | – | 40 | 0.0 |
-| b2 | first-request | 1KB | 283 ms | 315 ms | 359 ms | – | – | 40 | 0.0 |
-| aws-s3 | first-request | 1KB | 309 ms | 324 ms | 331 ms | – | – | 40 | 0.0 |
-| neon | first-request | 1KB | 348 ms | 405 ms | 468 ms | – | – | 40 | 0.0 |
-| b2 | head | 1KB | 93 ms | 144 ms | 187 ms | – | – | 96 | 0.0 |
-| neon | head | 1KB | 95 ms | 124 ms | 138 ms | – | – | 97 | 0.0 |
-| railway | head | 1KB | 103 ms | 108 ms | 296 ms | – | – | 97 | 0.0 |
-| aws-s3 | head | 1KB | 106 ms | 113 ms | 116 ms | – | – | 97 | 0.0 |
-| r2 | head | 1KB | 140 ms | 261 ms | 370 ms | – | – | 96 | 0.0 |
-| b2 | head | 1MB | 94 ms | 106 ms | 175 ms | – | – | 59 | 0.0 |
-| neon | head | 1MB | 95 ms | 123 ms | 257 ms | – | – | 60 | 0.0 |
-| railway | head | 1MB | 103 ms | 105 ms | 154 ms | – | – | 60 | 0.0 |
-| aws-s3 | head | 1MB | 103 ms | 109 ms | 196 ms | – | – | 60 | 0.0 |
-| r2 | head | 1MB | 139 ms | 238 ms | 325 ms | – | – | 60 | 0.0 |
-| neon | head | 10MB | 95 ms | 344 ms | 369 ms | – | – | 40 | 0.0 |
-| aws-s3 | head | 10MB | 106 ms | 317 ms | 329 ms | – | – | 40 | 0.0 |
-| railway | head | 10MB | 110 ms | 229 ms | 551 ms | – | – | 40 | 0.0 |
-| r2 | head | 10MB | 144 ms | 224 ms | 240 ms | – | – | 40 | 0.0 |
-| b2 | head | 10MB | 280 ms | 314 ms | 327 ms | – | – | 40 | 0.0 |
-| b2 | head | 100KB | 93 ms | 111 ms | 143 ms | – | – | 119 | 0.0 |
-| neon | head | 100KB | 95 ms | 125 ms | 210 ms | – | – | 120 | 0.0 |
-| railway | head | 100KB | 103 ms | 108 ms | 185 ms | – | – | 120 | 0.0 |
-| aws-s3 | head | 100KB | 109 ms | 116 ms | 127 ms | – | – | 120 | 0.0 |
-| r2 | head | 100KB | 137 ms | 206 ms | 258 ms | – | – | 120 | 0.0 |
-| neon | head | 100MB | 96 ms | – | – | – | – | 16 | 0.0 |
-| b2 | head | 100MB | 97 ms | – | – | – | – | 16 | 0.0 |
-| railway | head | 100MB | 103 ms | – | – | – | – | 16 | 0.0 |
-| aws-s3 | head | 100MB | 105 ms | – | – | – | – | 16 | 0.0 |
-| r2 | head | 100MB | 147 ms | – | – | – | – | 16 | 0.0 |
-| aws-s3 | list-all | 1000 objects | 174 ms | – | – | – | – | 12 | 0.0 |
-| railway | list-all | 1000 objects | 211 ms | – | – | – | – | 12 | 0.0 |
-| neon | list-all | 1000 objects | 275 ms | – | – | – | – | 12 | 0.0 |
-| b2 | list-all | 1000 objects | 732 ms | – | – | – | – | 12 | 0.0 |
-| r2 | list-all | 1000 objects | 844 ms | – | – | – | – | 12 | 0.0 |
-| railway | range-get | 256KB of 10MB | 279 ms | 546 ms | 560 ms | 213 ms | – | 40 | 0.0 |
-| aws-s3 | range-get | 256KB of 10MB | 308 ms | 662 ms | 700 ms | 119 ms | – | 40 | 0.0 |
-| b2 | range-get | 256KB of 10MB | 441 ms | 657 ms | 1.54 s | 148 ms | – | 40 | 0.0 |
-| neon | range-get | 256KB of 10MB | 444 ms | 607 ms | 626 ms | 120 ms | – | 40 | 0.0 |
-| r2 | range-get | 256KB of 10MB | 444 ms | 729 ms | 783 ms | 404 ms | – | 40 | 0.0 |
-| r2 | signed-upload | 1MB | 577 ms | 922 ms | 986 ms | – | – | 40 | 0.0 |
-| railway | signed-upload | 1MB | 630 ms | 827 ms | 1.16 s | – | – | 40 | 0.0 |
-| b2 | signed-upload | 1MB | 833 ms | 892 ms | 1.18 s | – | – | 40 | 0.0 |
-| neon | signed-upload | 1MB | 920 ms | 1.00 s | 1.32 s | – | – | 40 | 0.0 |
-| aws-s3 | signed-upload | 1MB | 961 ms | 1.32 s | 1.45 s | – | – | 40 | 0.0 |
-| railway | upload | 1KB | 113 ms | 138 ms | 332 ms | – | 0.0 | 97 | 0.0 |
-| aws-s3 | upload | 1KB | 119 ms | 132 ms | 168 ms | – | 0.0 | 97 | 0.0 |
-| neon | upload | 1KB | 154 ms | 197 ms | 244 ms | – | 0.0 | 97 | 0.0 |
-| b2 | upload | 1KB | 331 ms | 870 ms | 1.14 s | – | 0.0 | 96 | 1.0 |
-| r2 | upload | 1KB | 423 ms | 674 ms | 870 ms | – | 0.0 | 96 | 0.0 |
-| railway | upload | 1MB | 513 ms | 1.05 s | 1.57 s | – | 2.0 | 60 | 0.0 |
-| r2 | upload | 1MB | 555 ms | 1.29 s | 1.52 s | – | 1.9 | 60 | 0.0 |
-| aws-s3 | upload | 1MB | 740 ms | 1.69 s | 1.82 s | – | 1.4 | 60 | 0.0 |
-| b2 | upload | 1MB | 840 ms | 1.78 s | 1.85 s | – | 1.2 | 60 | 1.7 |
-| neon | upload | 1MB | 867 ms | 1.58 s | 1.76 s | – | 1.2 | 60 | 0.0 |
-| railway | upload | 10MB | 1.06 s | 4.80 s | 9.05 s | – | 9.9 | 40 | 0.0 |
-| r2 | upload | 10MB | 1.09 s | 2.22 s | 4.08 s | – | 9.6 | 40 | 0.0 |
-| neon | upload | 10MB | 1.31 s | 1.80 s | 2.95 s | – | 8.0 | 40 | 0.0 |
-| b2 | upload | 10MB | 1.54 s | 2.82 s | 11.43 s | – | 6.8 | 40 | 0.0 |
-| aws-s3 | upload | 10MB | 1.63 s | 5.73 s | 44.29 s | – | 6.4 | 40 | 0.0 |
-| railway | upload | 100KB | 307 ms | 356 ms | 395 ms | – | 0.3 | 120 | 0.0 |
-| neon | upload | 100KB | 387 ms | 446 ms | 482 ms | – | 0.3 | 120 | 0.0 |
-| aws-s3 | upload | 100KB | 415 ms | 450 ms | 491 ms | – | 0.2 | 120 | 0.0 |
-| r2 | upload | 100KB | 435 ms | 654 ms | 841 ms | – | 0.2 | 120 | 0.0 |
-| b2 | upload | 100KB | 647 ms | 1.07 s | 1.26 s | – | 0.2 | 120 | 0.8 |
-| r2 | upload | 100MB | 4.90 s | – | – | – | 21.4 | 16 | 0.0 |
-| aws-s3 | upload | 100MB | 7.87 s | – | – | – | 13.3 | 16 | 0.0 |
-| railway | upload | 100MB | 8.12 s | – | – | – | 12.9 | 16 | 0.0 |
-| neon | upload | 100MB | 8.24 s | – | – | – | 12.7 | 16 | 0.0 |
-| b2 | upload | 100MB | 8.90 s | – | – | – | 11.8 | 16 | 0.0 |
-| railway | url-get | 1KB | 177 ms | 280 ms | 687 ms | 176 ms | 0.0 | 97 | 0.0 |
-| r2 | url-get | 1KB | 194 ms | 398 ms | 431 ms | 194 ms | 0.0 | 96 | 0.0 |
-| b2 | url-get | 1KB | 280 ms | 421 ms | 734 ms | 280 ms | 0.0 | 96 | 0.0 |
-| aws-s3 | url-get | 1KB | 303 ms | 513 ms | 895 ms | 303 ms | 0.0 | 97 | 0.0 |
-| neon | url-get | 1KB | 371 ms | 587 ms | 726 ms | 370 ms | 0.0 | 97 | 0.0 |
-| r2 | url-get | 1MB | 337 ms | 599 ms | 870 ms | 254 ms | 3.1 | 60 | 0.0 |
-| railway | url-get | 1MB | 437 ms | 723 ms | 907 ms | 345 ms | 2.4 | 60 | 0.0 |
-| b2 | url-get | 1MB | 811 ms | 902 ms | 1.54 s | 321 ms | 1.3 | 59 | 0.0 |
-| aws-s3 | url-get | 1MB | 920 ms | 1.90 s | 9.68 s | 318 ms | 1.1 | 60 | 0.0 |
-| neon | url-get | 1MB | 980 ms | 1.93 s | 4.46 s | 381 ms | 1.1 | 60 | 0.0 |
-| r2 | url-get | 10MB | 896 ms | 1.48 s | 1.52 s | 283 ms | 11.7 | 40 | 0.0 |
-| railway | url-get | 10MB | 1.00 s | 2.63 s | 5.58 s | 336 ms | 10.5 | 40 | 0.0 |
-| b2 | url-get | 10MB | 1.27 s | 1.66 s | 2.06 s | 339 ms | 8.2 | 40 | 0.0 |
-| neon | url-get | 10MB | 3.94 s | 16.52 s | 19.10 s | 383 ms | 2.7 | 40 | 0.0 |
-| aws-s3 | url-get | 10MB | 3.97 s | 15.56 s | 38.34 s | 314 ms | 2.6 | 40 | 0.0 |
-| r2 | url-get | 100KB | 209 ms | 365 ms | 515 ms | 201 ms | 0.5 | 120 | 0.0 |
-| railway | url-get | 100KB | 364 ms | 533 ms | 652 ms | 337 ms | 0.3 | 120 | 0.0 |
-| aws-s3 | url-get | 100KB | 501 ms | 607 ms | 814 ms | 315 ms | 0.2 | 120 | 0.0 |
-| b2 | url-get | 100KB | 522 ms | 604 ms | 730 ms | 312 ms | 0.2 | 119 | 0.0 |
-| neon | url-get | 100KB | 617 ms | 714 ms | 877 ms | 374 ms | 0.2 | 120 | 0.0 |
-| r2 | url-get | 100MB | 4.20 s | – | – | 261 ms | 24.9 | 16 | 0.0 |
-| railway | url-get | 100MB | 5.26 s | – | – | 304 ms | 19.9 | 16 | 0.0 |
-| b2 | url-get | 100MB | 5.62 s | – | – | 350 ms | 18.6 | 16 | 0.0 |
-| neon | url-get | 100MB | 28.06 s | – | – | 483 ms | 3.7 | 16 | 0.0 |
-| aws-s3 | url-get | 100MB | 34.68 s | – | – | 385 ms | 3.0 | 16 | 0.0 |
+| railway | burst-upload | 32x100KB | 402 ms | 627 ms | 678 ms | – | 8.2 | 30 | 0.0 |
+| aws-s3 | burst-upload | 32x100KB | 444 ms | 688 ms | 751 ms | – | 7.4 | 30 | 0.0 |
+| neon | burst-upload | 32x100KB | 493 ms | 1.11 s | 1.35 s | – | 6.7 | 30 | 10.0 |
+| r2 | burst-upload | 32x100KB | 815 ms | 1.42 s | 2.76 s | – | 4.0 | 30 | 0.0 |
+| b2 | burst-upload | 32x100KB | 1.23 s | 2.59 s | 3.82 s | – | 2.7 | 30 | 10.0 |
+| b2 | concurrent-download | 16x100KB | 282 ms | 377 ms | 1.59 s | – | 5.8 | 28 | 0.0 |
+| neon | concurrent-download | 16x100KB | 343 ms | 613 ms | 728 ms | – | 4.8 | 30 | 0.0 |
+| railway | concurrent-download | 16x100KB | 376 ms | 563 ms | 669 ms | – | 4.4 | 30 | 0.0 |
+| r2 | concurrent-download | 16x100KB | 440 ms | 721 ms | 782 ms | – | 3.7 | 30 | 0.0 |
+| aws-s3 | concurrent-download | 16x100KB | 447 ms | 818 ms | 1.04 s | – | 3.7 | 30 | 0.0 |
+| railway | concurrent-upload | 16x100KB | 391 ms | 662 ms | 736 ms | – | 4.2 | 30 | 0.0 |
+| aws-s3 | concurrent-upload | 16x100KB | 436 ms | 641 ms | 663 ms | – | 3.8 | 30 | 0.0 |
+| neon | concurrent-upload | 16x100KB | 443 ms | 741 ms | 798 ms | – | 3.7 | 30 | 0.0 |
+| r2 | concurrent-upload | 16x100KB | 796 ms | 976 ms | 2.80 s | – | 2.1 | 30 | 0.0 |
+| b2 | concurrent-upload | 16x100KB | 1.13 s | 1.74 s | 2.35 s | – | 1.5 | 30 | 6.7 |
+| aws-s3 | copy | 10MB | 246 ms | 295 ms | 301 ms | – | – | 60 | 0.0 |
+| neon | copy | 10MB | 324 ms | 452 ms | 539 ms | – | – | 60 | 0.0 |
+| railway | copy | 10MB | 518 ms | 656 ms | 832 ms | – | – | 60 | 0.0 |
+| b2 | copy | 10MB | 677 ms | 2.21 s | 3.07 s | – | – | 60 | 0.0 |
+| r2 | copy | 10MB | 1.47 s | 2.07 s | 2.16 s | – | – | 60 | 0.0 |
+| b2 | delete | 1KB | 95 ms | 131 ms | 410 ms | – | – | 155 | 0.0 |
+| neon | delete | 1KB | 110 ms | 238 ms | 328 ms | – | – | 157 | 0.0 |
+| aws-s3 | delete | 1KB | 116 ms | 136 ms | 217 ms | – | – | 157 | 0.0 |
+| railway | delete | 1KB | 117 ms | 148 ms | 234 ms | – | – | 157 | 0.0 |
+| r2 | delete | 1KB | 173 ms | 351 ms | 429 ms | – | – | 156 | 0.0 |
+| b2 | delete | 1MB | 98 ms | 110 ms | 152 ms | – | – | 89 | 0.0 |
+| neon | delete | 1MB | 110 ms | 250 ms | 273 ms | – | – | 90 | 0.0 |
+| aws-s3 | delete | 1MB | 111 ms | 119 ms | 126 ms | – | – | 89 | 0.0 |
+| railway | delete | 1MB | 116 ms | 134 ms | 151 ms | – | – | 90 | 0.0 |
+| r2 | delete | 1MB | 170 ms | 287 ms | 433 ms | – | – | 90 | 0.0 |
+| b2 | delete | 10MB | 95 ms | 108 ms | 133 ms | – | – | 60 | 0.0 |
+| aws-s3 | delete | 10MB | 111 ms | 131 ms | 365 ms | – | – | 60 | 0.0 |
+| neon | delete | 10MB | 115 ms | 241 ms | 312 ms | – | – | 60 | 0.0 |
+| railway | delete | 10MB | 116 ms | 220 ms | 242 ms | – | – | 60 | 0.0 |
+| r2 | delete | 10MB | 191 ms | 459 ms | 528 ms | – | – | 60 | 0.0 |
+| b2 | delete | 100KB | 94 ms | 123 ms | 159 ms | – | – | 177 | 0.0 |
+| neon | delete | 100KB | 110 ms | 247 ms | 297 ms | – | – | 180 | 0.0 |
+| aws-s3 | delete | 100KB | 114 ms | 131 ms | 183 ms | – | – | 180 | 0.0 |
+| railway | delete | 100KB | 115 ms | 140 ms | 160 ms | – | – | 180 | 0.0 |
+| r2 | delete | 100KB | 171 ms | 276 ms | 362 ms | – | – | 180 | 0.0 |
+| neon | delete | 100MB | 116 ms | 145 ms | 151 ms | – | – | 24 | 0.0 |
+| railway | delete | 100MB | 119 ms | 154 ms | 204 ms | – | – | 24 | 0.0 |
+| b2 | delete | 100MB | 137 ms | 296 ms | 300 ms | – | – | 24 | 0.0 |
+| r2 | delete | 100MB | 188 ms | 465 ms | 479 ms | – | – | 23 | 0.0 |
+| aws-s3 | delete | 100MB | 228 ms | 335 ms | 345 ms | – | – | 24 | 0.0 |
+| b2 | download | 1KB | 101 ms | 158 ms | 380 ms | 101 ms | 0.0 | 155 | 0.0 |
+| railway | download | 1KB | 104 ms | 124 ms | 137 ms | 103 ms | 0.0 | 157 | 0.0 |
+| aws-s3 | download | 1KB | 120 ms | 286 ms | 379 ms | 120 ms | 0.0 | 157 | 0.0 |
+| neon | download | 1KB | 123 ms | 171 ms | 386 ms | 123 ms | 0.0 | 157 | 0.0 |
+| r2 | download | 1KB | 277 ms | 450 ms | 712 ms | 277 ms | 0.0 | 156 | 0.0 |
+| railway | download | 1MB | 325 ms | 739 ms | 1.79 s | 210 ms | 3.2 | 90 | 0.0 |
+| aws-s3 | download | 1MB | 397 ms | 1.22 s | 4.00 s | 118 ms | 2.6 | 89 | 0.0 |
+| r2 | download | 1MB | 432 ms | 697 ms | 746 ms | 289 ms | 2.4 | 90 | 0.0 |
+| b2 | download | 1MB | 609 ms | 715 ms | 1.10 s | 142 ms | 1.7 | 89 | 0.0 |
+| neon | download | 1MB | 617 ms | 1.87 s | 3.99 s | 123 ms | 1.7 | 90 | 0.0 |
+| railway | download | 10MB | 760 ms | 1.28 s | 2.16 s | 240 ms | 13.8 | 60 | 0.0 |
+| r2 | download | 10MB | 843 ms | 1.33 s | 1.96 s | 309 ms | 12.4 | 60 | 0.0 |
+| b2 | download | 10MB | 1.03 s | 1.46 s | 1.93 s | 152 ms | 10.2 | 60 | 0.0 |
+| aws-s3 | download | 10MB | 2.49 s | 12.56 s | 44.30 s | 118 ms | 4.2 | 60 | 0.0 |
+| neon | download | 10MB | 3.20 s | 6.89 s | 16.84 s | 128 ms | 3.3 | 60 | 0.0 |
+| aws-s3 | download | 100KB | 126 ms | 555 ms | 911 ms | 120 ms | 0.8 | 180 | 0.0 |
+| neon | download | 100KB | 205 ms | 533 ms | 793 ms | 122 ms | 0.5 | 180 | 0.0 |
+| railway | download | 100KB | 214 ms | 393 ms | 467 ms | 202 ms | 0.5 | 180 | 0.0 |
+| r2 | download | 100KB | 279 ms | 485 ms | 582 ms | 273 ms | 0.4 | 180 | 0.0 |
+| b2 | download | 100KB | 295 ms | 344 ms | 400 ms | 127 ms | 0.3 | 177 | 0.0 |
+| b2 | download | 100MB | 4.74 s | 6.33 s | 7.26 s | 155 ms | 22.1 | 24 | 0.0 |
+| railway | download | 100MB | 5.39 s | 10.40 s | 11.72 s | 243 ms | 19.5 | 24 | 0.0 |
+| r2 | download | 100MB | 5.59 s | 9.49 s | 10.20 s | 388 ms | 18.8 | 23 | 0.0 |
+| aws-s3 | download | 100MB | 22.93 s | 85.15 s | 92.47 s | 136 ms | 4.6 | 24 | 0.0 |
+| neon | download | 100MB | 25.74 s | 59.72 s | 68.98 s | 123 ms | 4.1 | 24 | 0.0 |
+| r2 | first-request | 1KB | 166 ms | 249 ms | 283 ms | – | – | 60 | 0.0 |
+| railway | first-request | 1KB | 219 ms | 293 ms | 409 ms | – | – | 60 | 0.0 |
+| b2 | first-request | 1KB | 284 ms | 315 ms | 353 ms | – | – | 60 | 0.0 |
+| aws-s3 | first-request | 1KB | 309 ms | 326 ms | 330 ms | – | – | 60 | 0.0 |
+| neon | first-request | 1KB | 347 ms | 386 ms | 450 ms | – | – | 60 | 0.0 |
+| b2 | head | 1KB | 95 ms | 124 ms | 187 ms | – | – | 155 | 0.0 |
+| neon | head | 1KB | 95 ms | 128 ms | 239 ms | – | – | 157 | 0.0 |
+| railway | head | 1KB | 103 ms | 127 ms | 212 ms | – | – | 157 | 0.0 |
+| aws-s3 | head | 1KB | 109 ms | 125 ms | 137 ms | – | – | 157 | 0.0 |
+| r2 | head | 1KB | 140 ms | 273 ms | 373 ms | – | – | 156 | 0.0 |
+| b2 | head | 1MB | 93 ms | 110 ms | 167 ms | – | – | 89 | 0.0 |
+| neon | head | 1MB | 96 ms | 132 ms | 177 ms | – | – | 90 | 0.0 |
+| railway | head | 1MB | 103 ms | 106 ms | 139 ms | – | – | 90 | 0.0 |
+| aws-s3 | head | 1MB | 104 ms | 116 ms | 297 ms | – | – | 89 | 0.0 |
+| r2 | head | 1MB | 135 ms | 243 ms | 323 ms | – | – | 90 | 0.0 |
+| neon | head | 10MB | 98 ms | 379 ms | 384 ms | – | – | 60 | 0.0 |
+| aws-s3 | head | 10MB | 109 ms | 331 ms | 381 ms | – | – | 60 | 0.0 |
+| railway | head | 10MB | 116 ms | 253 ms | 460 ms | – | – | 60 | 0.0 |
+| r2 | head | 10MB | 145 ms | 239 ms | 319 ms | – | – | 60 | 0.0 |
+| b2 | head | 10MB | 283 ms | 334 ms | 358 ms | – | – | 60 | 0.0 |
+| b2 | head | 100KB | 93 ms | 112 ms | 140 ms | – | – | 177 | 0.0 |
+| neon | head | 100KB | 95 ms | 134 ms | 209 ms | – | – | 180 | 0.0 |
+| railway | head | 100KB | 103 ms | 114 ms | 193 ms | – | – | 180 | 0.0 |
+| aws-s3 | head | 100KB | 107 ms | 118 ms | 240 ms | – | – | 180 | 0.0 |
+| r2 | head | 100KB | 133 ms | 205 ms | 273 ms | – | – | 180 | 0.0 |
+| neon | head | 100MB | 96 ms | 124 ms | 148 ms | – | – | 24 | 0.0 |
+| b2 | head | 100MB | 98 ms | 161 ms | 174 ms | – | – | 24 | 0.0 |
+| railway | head | 100MB | 103 ms | 122 ms | 219 ms | – | – | 24 | 0.0 |
+| aws-s3 | head | 100MB | 105 ms | 118 ms | 160 ms | – | – | 24 | 0.0 |
+| r2 | head | 100MB | 158 ms | 247 ms | 250 ms | – | – | 23 | 0.0 |
+| aws-s3 | list-all | 1000 objects | 165 ms | – | – | – | – | 18 | 0.0 |
+| railway | list-all | 1000 objects | 180 ms | – | – | – | – | 18 | 0.0 |
+| neon | list-all | 1000 objects | 203 ms | – | – | – | – | 18 | 0.0 |
+| b2 | list-all | 1000 objects | 298 ms | – | – | – | – | 18 | 0.0 |
+| r2 | list-all | 1000 objects | 796 ms | – | – | – | – | 18 | 0.0 |
+| railway | range-get | 256KB of 10MB | 255 ms | 545 ms | 558 ms | 218 ms | – | 60 | 0.0 |
+| neon | range-get | 256KB of 10MB | 377 ms | 534 ms | 621 ms | 121 ms | – | 60 | 0.0 |
+| aws-s3 | range-get | 256KB of 10MB | 386 ms | 720 ms | 808 ms | 120 ms | – | 60 | 0.0 |
+| r2 | range-get | 256KB of 10MB | 433 ms | 705 ms | 771 ms | 369 ms | – | 60 | 0.0 |
+| b2 | range-get | 256KB of 10MB | 447 ms | 695 ms | 1.28 s | 148 ms | – | 60 | 0.0 |
+| r2 | signed-upload | 1MB | 568 ms | 1.19 s | 1.29 s | – | – | 60 | 0.0 |
+| railway | signed-upload | 1MB | 638 ms | 868 ms | 1.33 s | – | – | 60 | 0.0 |
+| b2 | signed-upload | 1MB | 842 ms | 1.09 s | 1.21 s | – | – | 60 | 0.0 |
+| neon | signed-upload | 1MB | 921 ms | 1.16 s | 1.34 s | – | – | 60 | 0.0 |
+| aws-s3 | signed-upload | 1MB | 960 ms | 1.42 s | 3.30 s | – | – | 60 | 0.0 |
+| railway | upload | 1KB | 114 ms | 141 ms | 279 ms | – | 0.0 | 157 | 0.0 |
+| aws-s3 | upload | 1KB | 123 ms | 146 ms | 159 ms | – | 0.0 | 157 | 0.0 |
+| neon | upload | 1KB | 158 ms | 234 ms | 253 ms | – | 0.0 | 157 | 0.0 |
+| b2 | upload | 1KB | 323 ms | 885 ms | 1.18 s | – | 0.0 | 156 | 1.3 |
+| r2 | upload | 1KB | 417 ms | 662 ms | 850 ms | – | 0.0 | 156 | 0.0 |
+| railway | upload | 1MB | 555 ms | 1.44 s | 1.84 s | – | 1.9 | 90 | 0.0 |
+| r2 | upload | 1MB | 715 ms | 1.55 s | 1.65 s | – | 1.5 | 90 | 0.0 |
+| b2 | upload | 1MB | 895 ms | 1.94 s | 4.27 s | – | 1.2 | 90 | 1.1 |
+| aws-s3 | upload | 1MB | 1.06 s | 1.82 s | 1.97 s | – | 1.0 | 90 | 1.1 |
+| neon | upload | 1MB | 1.10 s | 6.39 s | 9.85 s | – | 1.0 | 90 | 0.0 |
+| railway | upload | 10MB | 1.11 s | 12.50 s | 25.67 s | – | 9.4 | 60 | 0.0 |
+| neon | upload | 10MB | 1.34 s | 13.79 s | 15.77 s | – | 7.8 | 60 | 0.0 |
+| r2 | upload | 10MB | 1.35 s | 12.50 s | 24.00 s | – | 7.8 | 60 | 0.0 |
+| aws-s3 | upload | 10MB | 1.73 s | 15.14 s | 58.05 s | – | 6.1 | 60 | 0.0 |
+| b2 | upload | 10MB | 1.80 s | 14.92 s | 37.76 s | – | 5.8 | 60 | 0.0 |
+| railway | upload | 100KB | 315 ms | 606 ms | 730 ms | – | 0.3 | 180 | 0.0 |
+| neon | upload | 100KB | 399 ms | 1.02 s | 1.80 s | – | 0.3 | 180 | 0.0 |
+| aws-s3 | upload | 100KB | 415 ms | 847 ms | 1.51 s | – | 0.2 | 180 | 0.0 |
+| r2 | upload | 100KB | 441 ms | 744 ms | 921 ms | – | 0.2 | 180 | 0.0 |
+| b2 | upload | 100KB | 658 ms | 1.23 s | 1.56 s | – | 0.2 | 180 | 1.7 |
+| r2 | upload | 100MB | 5.02 s | 40.76 s | 64.58 s | – | 20.9 | 24 | 4.2 |
+| aws-s3 | upload | 100MB | 8.18 s | 51.14 s | 127.61 s | – | 12.8 | 24 | 0.0 |
+| neon | upload | 100MB | 8.32 s | 58.02 s | 64.23 s | – | 12.6 | 24 | 0.0 |
+| railway | upload | 100MB | 8.61 s | 40.00 s | 56.21 s | – | 12.2 | 24 | 0.0 |
+| b2 | upload | 100MB | 9.58 s | 56.88 s | 62.96 s | – | 10.9 | 24 | 0.0 |
+| r2 | url-get | 1KB | 198 ms | 390 ms | 425 ms | 198 ms | 0.0 | 156 | 0.0 |
+| railway | url-get | 1KB | 198 ms | 316 ms | 879 ms | 198 ms | 0.0 | 157 | 0.0 |
+| b2 | url-get | 1KB | 283 ms | 389 ms | 702 ms | 283 ms | 0.0 | 155 | 0.0 |
+| aws-s3 | url-get | 1KB | 310 ms | 438 ms | 785 ms | 309 ms | 0.0 | 157 | 0.0 |
+| neon | url-get | 1KB | 373 ms | 646 ms | 776 ms | 372 ms | 0.0 | 157 | 0.0 |
+| r2 | url-get | 1MB | 334 ms | 615 ms | 863 ms | 254 ms | 3.1 | 90 | 0.0 |
+| railway | url-get | 1MB | 436 ms | 797 ms | 884 ms | 346 ms | 2.4 | 90 | 0.0 |
+| b2 | url-get | 1MB | 819 ms | 925 ms | 1.28 s | 321 ms | 1.3 | 89 | 0.0 |
+| aws-s3 | url-get | 1MB | 879 ms | 1.66 s | 4.69 s | 318 ms | 1.2 | 89 | 0.0 |
+| neon | url-get | 1MB | 954 ms | 1.91 s | 4.23 s | 389 ms | 1.1 | 90 | 0.0 |
+| r2 | url-get | 10MB | 663 ms | 1.34 s | 1.52 s | 260 ms | 15.8 | 60 | 0.0 |
+| railway | url-get | 10MB | 975 ms | 2.35 s | 5.51 s | 348 ms | 10.8 | 60 | 0.0 |
+| b2 | url-get | 10MB | 1.28 s | 1.55 s | 1.96 s | 347 ms | 8.2 | 60 | 0.0 |
+| aws-s3 | url-get | 10MB | 2.81 s | 11.59 s | 33.02 s | 315 ms | 3.7 | 60 | 0.0 |
+| neon | url-get | 10MB | 3.54 s | 7.32 s | 18.81 s | 386 ms | 3.0 | 60 | 0.0 |
+| r2 | url-get | 100KB | 210 ms | 367 ms | 529 ms | 202 ms | 0.5 | 180 | 0.0 |
+| railway | url-get | 100KB | 368 ms | 552 ms | 668 ms | 340 ms | 0.3 | 180 | 0.0 |
+| aws-s3 | url-get | 100KB | 503 ms | 612 ms | 836 ms | 317 ms | 0.2 | 180 | 0.0 |
+| b2 | url-get | 100KB | 521 ms | 601 ms | 698 ms | 314 ms | 0.2 | 177 | 0.0 |
+| neon | url-get | 100KB | 620 ms | 764 ms | 918 ms | 376 ms | 0.2 | 180 | 0.0 |
+| r2 | url-get | 100MB | 3.87 s | 7.07 s | 7.21 s | 263 ms | 27.1 | 23 | 0.0 |
+| railway | url-get | 100MB | 4.41 s | 9.36 s | 18.14 s | 333 ms | 23.8 | 24 | 0.0 |
+| b2 | url-get | 100MB | 5.56 s | 6.84 s | 7.94 s | 332 ms | 18.9 | 24 | 0.0 |
+| neon | url-get | 100MB | 26.89 s | 37.82 s | 47.60 s | 474 ms | 3.9 | 24 | 0.0 |
+| aws-s3 | url-get | 100MB | 27.68 s | 62.48 s | 69.10 s | 375 ms | 3.8 | 24 | 0.0 |
 
 ## Errors
 
-- 42× b2: FilesError: socket hang up
+- 47× b2: FilesError: socket hang up
 - 2× b2: FilesError: write EPIPE
 - 1× neon: FilesError: Neon error
 - 9× b2: FilesError: internal incident
 - 1× neon: seed failed: setup: FilesError: Neon error
 - 1× neon: TypeError: fetch failed
 - 2× aws-s3: TypeError: fetch failed
-- 1× r2: FilesError: read ECONNRESET
+- 2× r2: FilesError: read ECONNRESET
 - 1× r2: TypeError: fetch failed
 - 1× neon: FilesError: socket hang up
 - 1× aws-s3: FilesError: read ETIMEDOUT
 - 2× neon: FilesError: Please reduce your request rate.
 - 1× b2: seed failed: setup: FilesError: Backblaze B2 error
 - 1× aws-s3: seed failed: setup: FilesError: getaddrinfo EAI_AGAIN storage-bench-638432620713-us-east-2.s3.us-east-2.amazonaws.com
+- 1× aws-s3: FilesError: socket hang up
+- 2× neon: FilesError: We encountered an internal error. Please try again.

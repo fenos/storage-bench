@@ -33,9 +33,9 @@
       "model": "$0.023/GB-month, $0.005 per 1k writes, $0.0004 per 1k reads, egress $0.09/GB after 100 GB/month free (then $0.085, $0.07 tiers)",
       "source": "https://aws.amazon.com/s3/pricing/ (storage, requests, and data transfer tabs, US East (Ohio)); same values in the AWS Price List API, AmazonS3 and AWSDataTransfer offers",
       "monthly": [
-        1.13,
-        227.5,
-        4821.5
+        1.11420419216156,
+        226.710209608078,
+        4806.904192161561
       ]
     },
     {

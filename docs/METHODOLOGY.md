@@ -62,7 +62,7 @@ A full run does 60 round trips at 1 KB and 100 KB, 30 at 1 MB, 20 at 10 MB, 8 at
 
 Ashburn sits next to most of the buckets, like an app on AWS us-east-1. The other locations show the same buckets from across the country and from Europe. The two Railway clients share a network with Railway Buckets; the other four don't. The home line's upload speed caps its 100 MB numbers.
 
-Each client ran three full passes, except Lille, which ran two: its third was stopped partway so the results could be frozen for publishing, and its partial data was discarded. Passes from 2026-10-09 and 2026-10-15 are merged, so most locations span two days and different times of day. A client runs one benchmark process at a time.
+Each client ran three full passes. Lille's third was interrupted once, discarded, and run again in full. Passes from 2026-10-09 and 2026-10-15 are merged, so most locations span two days and different times of day. A client runs one benchmark process at a time.
 
 ## SDK notes
 

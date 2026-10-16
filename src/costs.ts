@@ -2,8 +2,8 @@ import { writeFile } from "node:fs/promises";
 import type { ProviderId } from "./providers.ts";
 
 /**
- * List prices as published on 2026-10-09. GB means 10^9 bytes here; providers differ slightly
- * (Tigris and some others bill binary GB), which moves totals by under 7%.
+ * List prices as published on 2026-10-09. Workloads are in GB of 10^9 bytes. AWS documents S3 storage in binary
+ * GB (2^30 bytes), so S3's stored amount is converted before its rate applies.
  */
 const checkedOn = "2026-10-09";
 
@@ -47,6 +47,9 @@ const tiered = (amount: number, tiers: readonly (readonly [upTo: number, rate: n
 
 const over = (amount: number, free: number): number => Math.max(0, amount - free);
 
+/** Decimal GB to the binary GB AWS bills in. */
+const toGiB = (gb: number): number => (gb * 1e9) / 2 ** 30;
+
 const prices: readonly Price[] = [
   {
     id: "aws-s3",
@@ -54,13 +57,14 @@ const prices: readonly Price[] = [
     source: "https://aws.amazon.com/s3/pricing/ (storage, requests, and data transfer tabs, US East (Ohio)); same values in the AWS Price List API, AmazonS3 and AWSDataTransfer offers",
     model: "$0.023/GB-month, $0.005 per 1k writes, $0.0004 per 1k reads, egress $0.09/GB after 100 GB/month free (then $0.085, $0.07 tiers)",
     monthly: (w) =>
-      w.storedGb * 0.023 +
+      toGiB(w.storedGb) * 0.023 +
       (w.writes / 1000) * 0.005 +
       (w.reads / 1000) * 0.0004 +
+      // Tier boundaries from the AWSDataTransfer price list, after the free 100 GB.
       tiered(over(w.egressGb, 100), [
-        [10_000, 0.09],
-        [50_000, 0.085],
-        [150_000, 0.07],
+        [10_240, 0.09],
+        [51_200, 0.085],
+        [153_600, 0.07],
         [Number.POSITIVE_INFINITY, 0.05],
       ]),
   },
@@ -104,7 +108,9 @@ const usd = (n: number): string => (n >= 100 ? `$${Math.round(n).toLocaleString(
 const lines = [
   "# Monthly cost",
   "",
-  `List prices checked ${checkedOn}. Storage only; no compute, support plans, or taxes.`,
+  `List prices checked ${checkedOn}. Storage, requests, and egress; no compute, support plans, or taxes.`,
+  "",
+  "Workloads are in GB of 10^9 bytes. AWS documents S3 storage in binary GB (2^30 bytes), so S3's stored amount is converted first. Everything else, including S3 transfer, is priced assuming decimal GB, since the pricing pages don't define the unit.",
   "",
   `| Provider | ${workloads.map((w) => w.name).join(" | ")} |`,
   `|---|${workloads.map(() => "---").join("|")}|`,

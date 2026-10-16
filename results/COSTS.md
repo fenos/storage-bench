@@ -1,10 +1,12 @@
 # Monthly cost
 
-List prices checked 2026-10-09. Storage only; no compute, support plans, or taxes.
+List prices checked 2026-10-09. Storage, requests, and egress; no compute, support plans, or taxes.
+
+Workloads are in GB of 10^9 bytes. AWS documents S3 storage in binary GB (2^30 bytes), so S3's stored amount is converted first. Everything else, including S3 transfer, is priced assuming decimal GB, since the pricing pages don't define the unit.
 
 | Provider | Side project | SaaS with user uploads | Media-heavy app |
 |---|---|---|---|
-| Amazon S3 (us-east-2) | $1.13 | $228 | $4,822 |
+| Amazon S3 (us-east-2) | $1.11 | $227 | $4,807 |
 | Cloudflare R2 | $0.00 | $39.75 | $412 |
 | Railway Buckets | $0.00 | $7.50 | $150 |
 | Backblaze B2 | $0.20 | $8.41 | $269 |
